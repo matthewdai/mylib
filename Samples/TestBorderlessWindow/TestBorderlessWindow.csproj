@@ -93,6 +93,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TMTech.ePERFORM.WPFLIB\TMTech.Shared.WPFLIB.csproj">
+      <Project>{86d6f3b3-2301-4d4c-b3c0-1590e96b85e3}</Project>
+      <Name>TMTech.Shared.WPFLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
