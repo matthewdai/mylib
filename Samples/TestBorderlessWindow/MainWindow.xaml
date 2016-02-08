@@ -3,7 +3,20 @@
         xmlns:lib="clr-namespace:TMTech.Shared.WPFLIB.Controls;assembly=TMTech.Shared.WPFLIB"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+
+    <TabControl>
+        <TabItem Header="Home" RenderTransformOrigin="0.5,0.5">
+            <TabItem.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabItem.RenderTransform>
+            <WrapPanel>
+                <lib:FlatToggleButton Padding="3" BorderBrush="#eeeeee" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Content="Kill" Foreground="Blue"/>
+            </WrapPanel>
+        </TabItem>
+    </TabControl>
 </lib:BorderlessWindow>

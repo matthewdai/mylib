@@ -12,4 +12,7 @@ C:\Projects\Github\My LIBs\Samples\TestBorderlessWindow\obj\Debug\TestBorderless
 C:\Projects\Github\My LIBs\Samples\TestBorderlessWindow\obj\Debug\TestBorderlessWindow.pdb
 C:\Projects\Github\My LIBs\Samples\TestBorderlessWindow\bin\Debug\TMTech.Shared.WPFLIB.dll
 C:\Projects\Github\My LIBs\Samples\TestBorderlessWindow\bin\Debug\TMTech.Shared.WPFLIB.pdb
+C:\Projects\Github\My LIBs\Samples\bin\TestBorderlessWindow.exe.config
+C:\Projects\Github\My LIBs\Samples\bin\TestBorderlessWindow.exe
+C:\Projects\Github\My LIBs\Samples\bin\TestBorderlessWindow.pdb
 C:\Projects\Github\My LIBs\Samples\TestBorderlessWindow\obj\Debug\TestBorderlessWindow.csprojResolveAssemblyReference.cache
