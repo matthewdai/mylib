@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:rib="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
@@ -11,6 +11,7 @@
         <ResourceDictionary Source="/TMTech.Shared.WPFLIB;component/Themes/MessageDialog.xaml" />
         <ResourceDictionary Source="/TMTech.Shared.WPFLIB;component/Themes/BorderlessWindowBasic.xaml" />
         <ResourceDictionary Source="/TMTech.Shared.WPFLIB;component/Themes/BorderlessWindow.xaml" />
+        <ResourceDictionary Source="/TMTech.Shared.WPFLIB;component/Themes/FlatToggleButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -93,4 +94,6 @@
 
 
 
+
+ 
 </ResourceDictionary>

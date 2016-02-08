@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-6-1457406420
+7-696456797
 
-1146452460
+12-115469261
 15-1860868071
-Themes\Basic.xaml;Themes\Generic.xaml;Themes\MessageDialog.xaml;Themes\SearchBox.xaml;Themes\BorderlessWindowBasic.xaml;Themes\BorderlessWindow.xaml;
+Themes\Basic.xaml;Themes\FlatToggleButton.xaml;Themes\Generic.xaml;Themes\MessageDialog.xaml;Themes\SearchBox.xaml;Themes\BorderlessWindowBasic.xaml;Themes\BorderlessWindow.xaml;
 
 False
 
