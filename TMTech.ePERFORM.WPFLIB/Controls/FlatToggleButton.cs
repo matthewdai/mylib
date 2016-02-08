@@ -57,6 +57,7 @@ namespace TMTech.Shared.WPFLIB.Controls
         public static DependencyProperty CheckedBackgroundProperty = DependencyProperty.Register("CheckedBackground", typeof(Brush), typeof(FlatToggleButton), new PropertyMetadata(Brushes.YellowGreen));
         public Brush CheckedBackground
         {
+
             get { return (Brush)GetValue(CheckedBackgroundProperty); }
             set { SetValue(CheckedBackgroundProperty, value); }
         }
