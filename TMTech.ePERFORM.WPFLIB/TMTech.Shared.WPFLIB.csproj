@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Controls\BorderlessWindowBasic.cs" />
     <Compile Include="Controls\FlatToggleButton.cs" />
+    <Compile Include="Extensions\EnumBindingSourceExtension.cs" />
     <Compile Include="ScreenHandler.cs" />
     <Page Include="Themes\Basic.xaml">
       <SubType>Designer</SubType>

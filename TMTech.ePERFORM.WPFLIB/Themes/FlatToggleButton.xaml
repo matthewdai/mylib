@@ -14,14 +14,17 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <!--<Setter Property="Margin" Value="3,0,0,0"></Setter>
-        <Setter Property="Padding" Value="10" />-->
+        <!--<Setter Property="Margin" Value="3,0,0,0"></Setter>-->
+        <Setter Property="Padding" Value="3" />
         <Setter Property="Background" Value="Transparent"/>
         <!--<Setter Property="Opacity" Value="0.7" />-->
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background"  Value="{Binding RelativeSource={RelativeSource Self}, Path=CheckedBackground}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background"  Value="{Binding RelativeSource={RelativeSource Self}, Path=CheckedBackground}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False" >
                 <Setter Property="Opacity" Value=".4"></Setter>
