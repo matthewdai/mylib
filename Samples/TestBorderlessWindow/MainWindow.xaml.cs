@@ -25,5 +25,10 @@ namespace TestBorderlessWindow
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Testing");
+        }
     }
 }

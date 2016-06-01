@@ -99,6 +99,12 @@
       <Name>TMTech.Shared.WPFLIB</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\9_dots_32.png" />
+    <Resource Include="Images\circle_play_32.png" />
+    <Resource Include="Images\Play_16.png" />
+    <Resource Include="Images\Play_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
