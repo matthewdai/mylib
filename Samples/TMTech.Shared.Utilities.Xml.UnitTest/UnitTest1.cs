@@ -1,8 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using System.Xml;
-using TMTech.Shared.Utilities.Xml.TMTech.Shared.Utilities.Xml;
 
 namespace TMTech.Shared.Utilities.Xml.UnitTest
 {
