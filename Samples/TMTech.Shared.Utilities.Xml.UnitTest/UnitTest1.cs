@@ -1,8 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using System.Xml;
-using TMTech.Shared.Utilities.Xml.TMTech.Shared.Utilities.Xml;
 
 namespace TMTech.Shared.Utilities.Xml.UnitTest
 {
@@ -19,6 +17,7 @@ namespace TMTech.Shared.Utilities.Xml.UnitTest
                 Desc = "sdf sd",
                 Amount = 123.45,
             },
+            MultiValues = new string[] {"aaa", "bbb", "ccc"},
 
         };
 
@@ -61,6 +60,8 @@ namespace TMTech.Shared.Utilities.Xml.UnitTest
             Assert.AreEqual(a.Data != null, true);
             Assert.AreEqual(a.Data.Amount, 123.45);
             Assert.AreEqual(a.Enabled, true);
+            Assert.AreEqual(a.MultiValues.Length, 3);
+            Assert.AreEqual(a.MultiValues[0], "aaa");
 
         }
 
@@ -75,6 +76,8 @@ namespace TMTech.Shared.Utilities.Xml.UnitTest
         public string Name { get; set; }
         public D Data { get; set; }
         public bool Enabled { get; set; }
+
+        public string[] MultiValues { get; set; }
 
     }
 
