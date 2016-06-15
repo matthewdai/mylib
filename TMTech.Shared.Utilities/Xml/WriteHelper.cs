@@ -109,6 +109,10 @@ namespace TMTech.Shared.Utilities.Xml
             {
                 xw.WriteString(ConvertArrayToString(pValue as double[]));
             }
+            else if (t == typeof(string[]))
+            {
+                WriteStringArray(pValue as string[], xw);
+            }
             else if (t.IsClass)
             {
                 CreateXmlText(pValue, xw);
@@ -124,6 +128,21 @@ namespace TMTech.Shared.Utilities.Xml
 
         }
 
+
+        /// <summary>
+        /// Write string array to xml
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="xw"></param>
+        private static void WriteStringArray(string[] values, XmlTextWriter xw)
+        {
+            foreach (var value in values)
+            {
+                xw.WriteStartElement("row");
+                xw.WriteString(value);
+                xw.WriteEndElement();
+            }
+        }
 
 
         /// <summary>
@@ -211,6 +230,29 @@ namespace TMTech.Shared.Utilities.Xml
                 return d;
             }
             return 0;
+        }
+
+
+        /// <summary>
+        /// Read string array from xml object
+        /// </summary>
+        /// <param name="xValue"></param>
+        /// <returns></returns>
+        public static string[] GetStringArray(XmlNode xValue)
+        {
+            string[] data = null;
+            var rows = xValue.SelectNodes("row");
+
+            if (rows.Count > 0)
+            {
+                data = new string[rows.Count];
+
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    data[i] = rows[i].InnerText;
+                }
+            }
+            return data;
         }
 
 

@@ -155,6 +155,10 @@ namespace TMTech.Shared.Utilities.Xml
                 propertyInfo.SetValue(obj, WriteHelper.GetEnumValue(propertyInfo.PropertyType, xValue.InnerText));
                 return;
             }
+            else if (t == typeof(string[]))
+            {
+                propertyInfo.SetValue(obj, WriteHelper.GetStringArray(xValue));
+            }
             else if (t.IsClass)
             {
                 XmlNode xObject = xValue.SelectSingleNode("object");
