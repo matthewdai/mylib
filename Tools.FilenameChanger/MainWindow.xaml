@@ -19,6 +19,11 @@
             <Setter Property="HorizontalAlignment" Value="Right" />
             <!--<Setter Property="Padding" Value="5 0 5 5" />-->
         </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
     </Window.Resources>
     
     
@@ -27,7 +32,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -49,14 +54,16 @@
         
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Format}" />
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding StartingNumber}" />
-        <DataGrid Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" ItemsSource="{Binding Files}" AutoGenerateColumns="False" LoadingRow="DataGrid_LoadingRow" HorizontalGridLinesBrush="#dddddd" VerticalGridLinesBrush="#dddddd" >
+        <DataGrid Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" ItemsSource="{Binding Files}" AutoGenerateColumns="False" LoadingRow="DataGrid_LoadingRow" 
+                  HorizontalGridLinesBrush="#dddddd" VerticalGridLinesBrush="#dddddd" CanUserAddRows="False" BorderThickness="1" BorderBrush="#dddddd" >
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="Original Name" Binding="{Binding FileName}" />
-                <DataGridTextColumn IsReadOnly="True" Header="New Name" Binding="{Binding NewFileName}" />
+                <DataGridTextColumn IsReadOnly="True" Header="New Name" Binding="{Binding NewFileName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+        <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Click="Refresh_Click" >Refresh</Button>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Click="Update_Click">Update</Button>
             <Button Click="Close_Click">Close</Button>
         </StackPanel>
