@@ -59,7 +59,10 @@
                 </WrapPanel>
 
             </Grid>
-            
+        </TabItem>
+
+        <TabItem Header="Test">
+            <Button Click="TestMessageDlg_Click" >Test message dialog</Button>
         </TabItem>
     </TabControl>
 </lib:BorderlessWindow>
