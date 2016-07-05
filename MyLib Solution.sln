@@ -22,6 +22,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.FilenameChanger", "To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMTech.Shared.Commands", "TMTech.Shared.Commands\TMTech.Shared.Commands.csproj", "{72052DB1-E0C3-46EF-BF82-01B96B560E6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{3EA7C6C1-8EBD-4F80-B49F-0DEBDC2D20F1}"
+	ProjectSection(SolutionItems) = preProject
+		lib\SpreadsheetGear2012.Core.dll = lib\SpreadsheetGear2012.Core.dll
+		lib\SpreadsheetGear2012.Drawing.dll = lib\SpreadsheetGear2012.Drawing.dll
+		lib\SpreadsheetGear2012.Windows.Forms.dll = lib\SpreadsheetGear2012.Windows.Forms.dll
+		lib\SpreadsheetGear2012.Windows.Forms.Integration.dll = lib\SpreadsheetGear2012.Windows.Forms.Integration.dll
+		lib\SpreadsheetGear2012.Windows.WPF.dll = lib\SpreadsheetGear2012.Windows.WPF.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +94,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3A49576D-67E5-47F8-9BD2-302A42EB31DF} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{DC03D9CB-0461-4D71-B90A-6726D6B3EC81} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
+		{3EA7C6C1-8EBD-4F80-B49F-0DEBDC2D20F1} = {373FB6B9-4AC8-4DA0-9FDC-D69CFCAC92DA}
 	EndGlobalSection
 EndGlobal
