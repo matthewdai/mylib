@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{3EA7C6C1-8EB
 		lib\SpreadsheetGear2012.Windows.WPF.dll = lib\SpreadsheetGear2012.Windows.WPF.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadSheetGearCommandDemo", "SpreadSheetGearCommandDemo\SpreadSheetGearCommandDemo.csproj", "{67E53DD5-0769-408E-A606-D166F4B7BAF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,14 @@ Global
 		{72052DB1-E0C3-46EF-BF82-01B96B560E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72052DB1-E0C3-46EF-BF82-01B96B560E6F}.Release|x64.ActiveCfg = Release|x64
 		{72052DB1-E0C3-46EF-BF82-01B96B560E6F}.Release|x64.Build.0 = Release|x64
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +105,6 @@ Global
 		{3A49576D-67E5-47F8-9BD2-302A42EB31DF} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{DC03D9CB-0461-4D71-B90A-6726D6B3EC81} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{3EA7C6C1-8EBD-4F80-B49F-0DEBDC2D20F1} = {373FB6B9-4AC8-4DA0-9FDC-D69CFCAC92DA}
+		{67E53DD5-0769-408E-A606-D166F4B7BAF5} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 	EndGlobalSection
 EndGlobal
