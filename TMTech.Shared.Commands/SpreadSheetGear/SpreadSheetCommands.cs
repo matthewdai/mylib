@@ -14,21 +14,56 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
     /// <summary>
     /// This class contain some commands related with application.
     /// </summary>
-    public class SpreadSheetCommands
+    public static class SpreadSheetCommands
     {
         //public static RoutedCommand ExportToExcel = new RoutedCommand();
-        public static RoutedCommand ZoomIn = new RoutedCommand();
-        public static RoutedCommand ZoomOut = new RoutedCommand();
-        public static RoutedCommand Bold = new RoutedCommand();
-        public static RoutedCommand Italic = new RoutedCommand();
+        public static RoutedUICommand ZoomIn = new RoutedUICommand("Zoom in", "ZoomIn", typeof(string));
+        public static RoutedUICommand ZoomOut = new RoutedUICommand("Zoom out", "ZoomOut", typeof(string));
+        public static RoutedUICommand Bold = new RoutedUICommand("Bold", "Bold", typeof(string));
+        public static RoutedUICommand Italic = new RoutedUICommand("Italic", "Italic",  typeof(string));
 
-        public static RoutedCommand Underline = new RoutedCommand();
-        public static RoutedCommand Percent = new RoutedCommand();
-        public static RoutedCommand ThousandSeperator = new RoutedCommand();
-        public static RoutedCommand IncreaseDecimal = new RoutedCommand();
-        public static RoutedCommand DecreaseDecimal = new RoutedCommand();
-        public static RoutedCommand Format = new RoutedCommand();
-        public static RoutedCommand AutoFilter = new RoutedCommand();
+        public static RoutedUICommand Underline = new RoutedUICommand("Underline", "Underline", typeof(string));
+        public static RoutedUICommand Percent = new RoutedUICommand("Percent", "Percent", typeof(string));
+        public static RoutedUICommand ThousandSeperator = new RoutedUICommand("Thousand Seperator", "ThousandSeperator", typeof(string));
+        public static RoutedUICommand IncreaseDecimal = new RoutedUICommand("Increase Decimal", "IncreaseDecimal", typeof(string));
+        public static RoutedUICommand DecreaseDecimal = new RoutedUICommand("Decrease Decimal", "DecreaseDecimal", typeof(string));
+        public static RoutedUICommand Format = new RoutedUICommand("Format ...", "Format", typeof(string));
+        public static RoutedUICommand AutoFilter = new RoutedUICommand("Auto Filter", "AutoFilter", typeof(string));
+        internal static RoutedUICommand FindAndReplace = new RoutedUICommand("Find ...", "FindAndReplace", typeof(string), new InputGestureCollection() { new KeyGesture(Key.F, ModifierKeys.Control) });
+
+        /// <summary>
+        /// Bind commands to workbookview.
+        /// </summary>
+        /// <param name="workbookView"></param>
+        public static void BindAllCommands(WorkbookView workbookView)
+        {
+            workbookView.CommandBindings.Add(new CommandCopyBinding());
+            workbookView.CommandBindings.Add(new CommandPasteBinding());
+            //workbookView.CommandBindings.Add(new CommandPasteBinding());
+
+            workbookView.CommandBindings.Add(new CommandUndoBinding());
+            workbookView.CommandBindings.Add(new CommandRedoBinding());
+
+            workbookView.CommandBindings.Add(new FormatCommandBinding());
+
+            workbookView.CommandBindings.Add(new BoldCommandBinding());
+            workbookView.CommandBindings.Add(new ItalicCommandBinding());
+            workbookView.CommandBindings.Add(new UnderlineCommandBinding());
+
+            workbookView.CommandBindings.Add(new CommandZoomInBinding());
+            workbookView.CommandBindings.Add(new CommandZoomOutBinding());
+
+            workbookView.CommandBindings.Add(new PercentCommandBinding());
+            workbookView.CommandBindings.Add(new ThousandSeperatorCommandBinding());
+            workbookView.CommandBindings.Add(new IncreaseDecimalCommandBinding());
+            workbookView.CommandBindings.Add(new DecreaseDecimalCommandBinding());
+
+            workbookView.CommandBindings.Add(new CommandSaveAsBinding());
+            workbookView.CommandBindings.Add(new PrintCommandBinding());
+
+            workbookView.CommandBindings.Add(new CommandAutoFilterBinding());
+            //workbookView.CommandBindings.Add(new CommandFindAndReplaceBinding());
+        }
     }
 
 
@@ -956,7 +991,7 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
     {
 
         public CommandAutoFilterBinding()
-            : base(ApplicationCommands.SaveAs, OnExecute, OnCanExecute)
+            : base(SpreadSheetCommands.AutoFilter, OnExecute, OnCanExecute)
         { }
 
 
@@ -989,4 +1024,6 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
         }
 
     }
+
+
 }
