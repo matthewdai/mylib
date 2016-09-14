@@ -146,6 +146,12 @@ namespace Tools.FilenameChanger
             }
 
 
+            public void Refresh()
+            {
+                FetchFilenames(Folder);
+            }
+
+
             private void RefreshFileNames()
             {
                 int count = StartingNumber;
@@ -221,6 +227,11 @@ namespace Tools.FilenameChanger
             // start update
             _ViewModel.Rename();
 
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            _ViewModel.Refresh();
         }
     }
 }
