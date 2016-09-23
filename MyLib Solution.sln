@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{3EA7C6C1-8EB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadSheetGearCommandDemo", "SpreadSheetGearCommandDemo\SpreadSheetGearCommandDemo.csproj", "{67E53DD5-0769-408E-A606-D166F4B7BAF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMTech.Shared.WPF.Icons", "TMTech.Shared.WPF.Icons\TMTech.Shared.WPF.Icons.csproj", "{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,14 @@ Global
 		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|x64.ActiveCfg = Release|Any CPU
 		{67E53DD5-0769-408E-A606-D166F4B7BAF5}.Release|x64.Build.0 = Release|Any CPU
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Debug|x64.ActiveCfg = Debug|x64
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Debug|x64.Build.0 = Debug|x64
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Release|x64.ActiveCfg = Release|x64
+		{4DE770E0-F251-40EC-87B5-8DF37EEA09F6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
