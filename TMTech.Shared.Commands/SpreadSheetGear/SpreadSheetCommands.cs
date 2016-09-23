@@ -31,38 +31,44 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
         public static RoutedUICommand AutoFilter = new RoutedUICommand("Auto Filter", "AutoFilter", typeof(string));
         internal static RoutedUICommand FindAndReplace = new RoutedUICommand("Find ...", "FindAndReplace", typeof(string), new InputGestureCollection() { new KeyGesture(Key.F, ModifierKeys.Control) });
 
+        public static RoutedUICommand HorizontalAlignment = new RoutedUICommand();
+        public static RoutedUICommand VerticalAlignment = new RoutedUICommand();
+
         /// <summary>
         /// Bind commands to workbookview.
         /// </summary>
         /// <param name="workbookView"></param>
-        public static void BindAllCommands(WorkbookView workbookView)
+        public static void BindAllCommands(Control control)
         {
-            workbookView.CommandBindings.Add(new CommandCopyBinding());
-            workbookView.CommandBindings.Add(new CommandPasteBinding());
-            //workbookView.CommandBindings.Add(new CommandPasteBinding());
+            control.CommandBindings.Add(new CommandCopyBinding());
+            control.CommandBindings.Add(new CommandPasteBinding());
+            //control.CommandBindings.Add(new CommandPasteBinding());
 
-            workbookView.CommandBindings.Add(new CommandUndoBinding());
-            workbookView.CommandBindings.Add(new CommandRedoBinding());
+            control.CommandBindings.Add(new CommandUndoBinding());
+            control.CommandBindings.Add(new CommandRedoBinding());
 
-            workbookView.CommandBindings.Add(new FormatCommandBinding());
+            control.CommandBindings.Add(new FormatCommandBinding());
 
-            workbookView.CommandBindings.Add(new BoldCommandBinding());
-            workbookView.CommandBindings.Add(new ItalicCommandBinding());
-            workbookView.CommandBindings.Add(new UnderlineCommandBinding());
+            control.CommandBindings.Add(new BoldCommandBinding());
+            control.CommandBindings.Add(new ItalicCommandBinding());
+            control.CommandBindings.Add(new UnderlineCommandBinding());
 
-            workbookView.CommandBindings.Add(new CommandZoomInBinding());
-            workbookView.CommandBindings.Add(new CommandZoomOutBinding());
+            control.CommandBindings.Add(new CommandZoomInBinding());
+            control.CommandBindings.Add(new CommandZoomOutBinding());
 
-            workbookView.CommandBindings.Add(new PercentCommandBinding());
-            workbookView.CommandBindings.Add(new ThousandSeperatorCommandBinding());
-            workbookView.CommandBindings.Add(new IncreaseDecimalCommandBinding());
-            workbookView.CommandBindings.Add(new DecreaseDecimalCommandBinding());
+            control.CommandBindings.Add(new PercentCommandBinding());
+            control.CommandBindings.Add(new ThousandSeperatorCommandBinding());
+            control.CommandBindings.Add(new IncreaseDecimalCommandBinding());
+            control.CommandBindings.Add(new DecreaseDecimalCommandBinding());
 
-            workbookView.CommandBindings.Add(new CommandSaveAsBinding());
-            workbookView.CommandBindings.Add(new PrintCommandBinding());
+            control.CommandBindings.Add(new CommandSaveAsBinding());
+            control.CommandBindings.Add(new PrintCommandBinding());
 
-            workbookView.CommandBindings.Add(new CommandAutoFilterBinding());
-            //workbookView.CommandBindings.Add(new CommandFindAndReplaceBinding());
+            control.CommandBindings.Add(new CommandAutoFilterBinding());
+            //control.CommandBindings.Add(new CommandFindAndReplaceBinding());
+
+            control.CommandBindings.Add(new HorizontalAlignmentCommandBinding());
+            control.CommandBindings.Add(new VerticalAlignmentCommandBinding());
         }
     }
 
@@ -543,10 +549,8 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
 
         static void OnExecute(object sender, ExecutedRoutedEventArgs e)
         {
-            var wbView = sender as WorkbookView;
-
-            if (wbView == null)
-                return;
+            var wbView = Helper.FindChild<WorkbookView>(sender as DependencyObject);
+            if (wbView == null) return;
 
 
             // NOTE: Must acquire a workbook set lock.
@@ -567,9 +571,8 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
 
         static void OnCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            var wbView = sender as WorkbookView;
-
-            e.CanExecute = wbView != null;
+            var wbview = Helper.FindChild<WorkbookView>(sender as DependencyObject);
+            e.CanExecute = wbview != null;
         }
     }
 
@@ -1024,6 +1027,4 @@ namespace TMTech.Shared.Commands.SpreadSheetGear
         }
 
     }
-
-
 }
