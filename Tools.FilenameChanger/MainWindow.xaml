@@ -4,68 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tools.FilenameChanger"
+        xmlns:controls="clr-namespace:Tools.FilenameChanger.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 
-    <Window.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="MinWidth" Value="100" />
-        </Style>
+    <Grid >
 
-        <Style TargetType="Label">
-            <Setter Property="VerticalAlignment" Value="Top" />
-            <Setter Property="HorizontalAlignment" Value="Right" />
-            <!--<Setter Property="Padding" Value="5 0 5 5" />-->
-        </Style>
+        <TabControl>
+            <TabItem Header="Rename Files">
+                <controls:FileRename/>
+            </TabItem>
 
-        <Style TargetType="Button">
-            <Setter Property="Width" Value="60" />
-            <Setter Property="Margin" Value="5" />
-        </Style>
-    </Window.Resources>
-    
-    
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Row="0">Folder:</Label>
-        <Label Grid.Row="1">Format:</Label>
-        <Label Grid.Row="2">Starting Number:</Label>
-        <Label Grid.Row="3">Files:</Label>
-
-        <DockPanel Grid.Row="0" Grid.Column="1">
-            <Button DockPanel.Dock="Right" Width="50" VerticalAlignment="Center" Click="Browse_Click">Browse ...</Button>
-            <TextBox Text="{Binding Folder}" Margin="0 0 5 0" />
-        </DockPanel>
+            <TabItem Header="Word Process">
+                <controls:WordProcessor/>
+            </TabItem>
+            
+            
+        </TabControl>
         
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Format}" />
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding StartingNumber}" />
-        <DataGrid Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" ItemsSource="{Binding Files}" AutoGenerateColumns="False" LoadingRow="DataGrid_LoadingRow" 
-                  HorizontalGridLinesBrush="#dddddd" VerticalGridLinesBrush="#dddddd" CanUserAddRows="False" BorderThickness="1" BorderBrush="#dddddd" >
-            <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Header="Original Name" Binding="{Binding FileName}" />
-                <DataGridTextColumn IsReadOnly="True" Header="New Name" Binding="{Binding NewFileName}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
-        <Button Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Click="Refresh_Click" >Refresh</Button>
-        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Click="Update_Click">Update</Button>
-            <Button Click="Close_Click">Close</Button>
-        </StackPanel>
     </Grid>
 </Window>
