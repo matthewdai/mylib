@@ -16,8 +16,11 @@
         
         <TextBox x:Name="textBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
 
-        
-        <Button Grid.Row="1" HorizontalAlignment="Right" Margin="5" Click="Button_Click">Process</Button>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right">
+            <Button Margin="5" Click="Button_Click">Process</Button>
+            <Button Margin="5" Click="ProcessFile_Click">Process File</Button>
+        </StackPanel>
 
     </Grid>
 </UserControl>
