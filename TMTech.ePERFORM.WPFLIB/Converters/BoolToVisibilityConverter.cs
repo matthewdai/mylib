@@ -11,11 +11,20 @@ namespace TMTech.Shared.WPFLIB.Converters
     public class BoolToVisibilityConverter : IValueConverter
     {
 
+        /// <summary>
+        /// Inverse the bool value when converting
+        /// </summary>
+        public bool Inverse { get; set; } = false;
+
+
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             var visible = false;
 
             bool.TryParse(value.ToString(), out visible);
+
+            // Inverse the value
+            if (Inverse) visible = !visible;
 
             if (visible)
                 return Visibility.Visible;
