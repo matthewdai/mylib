@@ -69,7 +69,11 @@ namespace TMTech.Shared.WPFLIB.Controls
         /// </summary>
         public MessageDialog() : base(false)
         {
-            this.Title = ProductTitle;
+            if (ProductTitle == null)
+                this.Title = "Product title goes here.";
+            else
+                this.Title = ProductTitle;
+
             this.Loaded += MessageDialog_Loaded;
 
         }

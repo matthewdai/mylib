@@ -72,7 +72,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:SearchTextBox}">
-                    <Border x:Name="Border" Padding="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border x:Name="Border" Padding="1" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid x:Name="LayoutGrid">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -87,13 +87,13 @@
                                    VerticalAlignment="Center"
                                    Padding="2,0,0,0" FontStyle="Italic"/>
 
-                            <Border x:Name="PART_SearchIconBorder" Grid.Column="1" BorderThickness="1"
-                                    Padding="1"
+                            <Border x:Name="PART_SearchIconBorder" Grid.Column="1" BorderThickness="0"
+                                    Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalAlignment="Stretch"
                                     BorderBrush="{StaticResource SearchTextBox_Border}"
                                     Background="{StaticResource SearchTextBox_Background}">
-                                <Image x:Name="SearchIcon" Stretch="Uniform"  Width="10" Height="15" HorizontalAlignment="Center" Opacity="0.5" VerticalAlignment="Center" Source="/TMTech.Shared.WPFLIB;component/Images/Search_16.png" />
+                                <Image x:Name="SearchIcon" Stretch="Uniform" Width="8" Height="8" HorizontalAlignment="Center" Opacity="0.5" VerticalAlignment="Center" Source="/TMTech.Shared.WPFLIB;component/Images/Search_16.png" />
                             </Border>
                         </Grid>
                     </Border>
