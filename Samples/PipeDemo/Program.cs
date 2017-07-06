@@ -1,19 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
-using System.Text;
+using System.Linq;
 using System.Security.Principal;
-using System.Diagnostics;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace MutexDemo
+namespace PipeDemo
 {
     public class PipeClient
     {
         private static int numClients = 4;
 
 
-        public static void Mains(string[] Args)
+        public static void Main(string[] Args)
         {
             if (Args.Length > 0)
             {
@@ -21,7 +24,7 @@ namespace MutexDemo
                 {
                     var pipeClient = new NamedPipeClientStream(".", "testpipt", PipeDirection.InOut, PipeOptions.None, TokenImpersonationLevel.Impersonation);
 
-                    Debug.Print("Connecting to server ...\n");
+                    Console.WriteLine("Connecting to server ...\n");
                     pipeClient.Connect();
 
                     var ss = new StreamString(pipeClient);
@@ -32,9 +35,10 @@ namespace MutexDemo
                     }
                     else
                     {
-                        Debug.Print("Server could not be verified.");
+                        Console.WriteLine("Server could not be verified.");
                     }
 
+                    Thread.Sleep(250);
                     pipeClient.Close();
                 }
             }
@@ -68,6 +72,8 @@ namespace MutexDemo
             {
                 // Start 'this' program but spawn a named pipe client.
                 plist[i] = Process.Start(currentProcessName, "spawnclient");
+
+                Thread.Sleep(250);
             }
             while (i > 0)
             {
@@ -92,7 +98,7 @@ namespace MutexDemo
         }
     }
 
-    
+
     // Defines the data protocol for reading and writing strings on our stream
     public class StreamString
     {
@@ -132,7 +138,4 @@ namespace MutexDemo
             return outBuffer.Length + 2;
         }
     }
-
 }
-
-
