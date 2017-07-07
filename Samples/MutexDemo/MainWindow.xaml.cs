@@ -28,12 +28,24 @@ namespace MutexDemo
         {
             InitializeComponent();
 
-            this.Activated += MainWindow_Activated;
+            this.Closed += MainWindow_Closed;
         }
 
-        private void MainWindow_Activated(object sender, EventArgs e)
+        private void MainWindow_Closed(object sender, EventArgs e)
         {
-            msg.Text = "windows was activated at " + DateTime.Now.ToLongTimeString();
+            //Shared._PipeServer.Stop();
         }
+
+
+
+        public void OpenSubmission(string sid)
+        {
+            var tabItem = new TabItem() { Header = sid, };
+
+            tabControl.Items.Add(tabItem);
+
+            this.Activate();
+        }
+
     }
 }

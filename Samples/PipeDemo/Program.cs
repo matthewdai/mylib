@@ -13,8 +13,9 @@ namespace PipeDemo
 {
     public class PipeClient
     {
-        private static int numClients = 4;
+        const string SUBMISSION_ID = "{C6E41045-5CA6-4287-9BEF-3F98FFCFCC63}";
 
+        private static int numClients = 1;
 
         public static void Main(string[] Args)
         {
@@ -22,28 +23,36 @@ namespace PipeDemo
             {
                 if (Args[0] == "spawnclient")
                 {
-                    var pipeClient = new NamedPipeClientStream(".", "testpipt", PipeDirection.InOut, PipeOptions.None, TokenImpersonationLevel.Impersonation);
+                    var pipeClient = new NamedPipeClientStream(".", "testpipe", PipeDirection.InOut, PipeOptions.None, TokenImpersonationLevel.Impersonation);
 
                     Console.WriteLine("Connecting to server ...\n");
                     pipeClient.Connect();
 
                     var ss = new StreamString(pipeClient);
 
+                    // validate the server's signature string
                     if (ss.ReadString() == "I am the one true server!")
                     {
-                        ss.WriteString("c:\\textfile.txt");
+                        // the client security token is sent with the first write.
+                        // send the name of the file whose contents are returned by the server
+                        ss.WriteString(SUBMISSION_ID);
+
+                        // print the file to the screen
+                        Console.Write("Submission id was sent to server.");
                     }
                     else
                     {
                         Console.WriteLine("Server could not be verified.");
                     }
 
-                    Thread.Sleep(250);
                     pipeClient.Close();
+                    // give client process some time to display results before exiting.
+                    Thread.Sleep(4000);
                 }
             }
             else
             {
+                Console.WriteLine("\n*** Named pipe client stream with impersonation example ***\n"); 
                 StartClients();
             }
         }
@@ -75,6 +84,7 @@ namespace PipeDemo
 
                 Thread.Sleep(250);
             }
+
             while (i > 0)
             {
                 for (int j = 0; j < numClients; j++)
@@ -95,6 +105,8 @@ namespace PipeDemo
                 }
             }
             Console.WriteLine("\nClient processes finished, exiting.");
+
+            Thread.Sleep(5000);
         }
     }
 
@@ -138,4 +150,8 @@ namespace PipeDemo
             return outBuffer.Length + 2;
         }
     }
+
+
+
+    
 }

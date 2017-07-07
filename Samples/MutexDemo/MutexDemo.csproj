@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="PipeClient.cs" />
+    <Compile Include="PipeServer.cs" />
+    <Compile Include="Shared.cs" />
     <Compile Include="SingleProgramInstance.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -16,6 +16,8 @@ namespace MutexDemo
     public partial class App : Application
     {
 
+
+        [STAThread]
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             CheckInstance();
@@ -42,11 +44,14 @@ namespace MutexDemo
 
 
 
-        static void Start() {
-            //var process = Process.GetCurrentProcess();
 
-            var win = new MainWindow();
-            win.Show();
+        static void Start() {
+
+            // Create an pipe server
+            Shared._PipeServer = new PipeServer();
+
+            Shared._MainWindow = new MainWindow();
+            Shared._MainWindow.Show();
         }
 
 

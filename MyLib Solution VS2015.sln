@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMTech.Shared.WPFLIB", "TMTech.ePERFORM.WPFLIB\TMTech.Shared.WPFLIB.csproj", "{86D6F3B3-2301-4D4C-B3C0-1590E96B85E3}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexDemo", "Samples\MutexDemo\MutexDemo.csproj", "{EE231A26-A40C-447B-BFC0-885340902E72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeDemo", "Samples\PipeDemo\PipeDemo.csproj", "{ECC2ADEA-2C9A-4492-BBBF-969427AF0F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipeDemoServer", "Samples\PipeDemoServer\PipeDemoServer.csproj", "{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +151,14 @@ Global
 		{ECC2ADEA-2C9A-4492-BBBF-969427AF0F79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECC2ADEA-2C9A-4492-BBBF-969427AF0F79}.Release|x64.ActiveCfg = Release|Any CPU
 		{ECC2ADEA-2C9A-4492-BBBF-969427AF0F79}.Release|x64.Build.0 = Release|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Debug|x64.Build.0 = Debug|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Release|x64.ActiveCfg = Release|Any CPU
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,5 +172,6 @@ Global
 		{D380BC63-248F-4FE3-A2F6-E889A9F76662} = {9ADDFE36-EB5F-4264-A949-D2E7AE9B2D13}
 		{EE231A26-A40C-447B-BFC0-885340902E72} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{ECC2ADEA-2C9A-4492-BBBF-969427AF0F79} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
+		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 	EndGlobalSection
 EndGlobal
