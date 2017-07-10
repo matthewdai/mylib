@@ -4,9 +4,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,6 +24,8 @@ namespace SearchBoxDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -78,13 +82,55 @@ namespace SearchBoxDemo
             {
                 get { return mAllNames; }
             }
-
-
-
+            
         }
 
-        
+        private void SearchTextBox_Search(object sender, RoutedEventArgs e)
+        {
+            SetFilter();
+        }
 
-        
+
+
+        private string mFilterText;
+
+
+        private void SetFilter()
+        {
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(list.ItemsSource);
+            if (searchBox.UseWildcards)
+            {
+                mFilterText = searchBox.GetRegularExpression();
+                view.Filter = FilterMethodWithWildcards;
+            }
+            else
+            {
+                mFilterText = searchBox.Text;
+                view.Filter = FilterMethod;
+            }
+
+                
+        }
+
+
+        private bool FilterMethod(object item)
+        {
+            //mFilterText = this.searchBox.Text;
+            return (item.ToString().IndexOf(mFilterText, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private bool FilterMethodWithWildcards(object item)
+        {
+            return Regex.IsMatch(item.ToString(), mFilterText, RegexOptions.IgnoreCase);
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton tb = sender as ToggleButton;
+            if ((bool)tb.IsChecked)
+                this.chkUseWildcards.Visibility = Visibility.Visible;
+            else
+                this.chkUseWildcards.Visibility = Visibility.Collapsed;
+        }
     }
 }

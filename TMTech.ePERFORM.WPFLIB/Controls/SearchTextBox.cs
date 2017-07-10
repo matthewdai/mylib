@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -55,6 +56,8 @@ namespace TMTech.Shared.WPFLIB.Controls
 
         public static DependencyProperty SearchModeProperty = DependencyProperty.Register("SearchMode", typeof(SearchMode), typeof(SearchTextBox), new PropertyMetadata(SearchMode.Instant));
 
+        public static DependencyProperty UseWildcardsProperty = DependencyProperty.Register("UseWildcards", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
+
         private static DependencyPropertyKey HasTextPropertyKey = DependencyProperty.RegisterReadOnly("HasText", typeof(bool), typeof(SearchTextBox), new PropertyMetadata());
 
         public static DependencyProperty HasTextProperty = HasTextPropertyKey.DependencyProperty;
@@ -96,11 +99,27 @@ namespace TMTech.Shared.WPFLIB.Controls
             set { SetValue(SearchModeProperty, value); }
         }
 
+        public bool UseWildcards
+        {
+            get { return (bool)GetValue(UseWildcardsProperty); }
+            set { SetValue(UseWildcardsProperty, value); }
+        }
+
         public bool HasText
         {
             get { return (bool)GetValue(HasTextProperty); }
             private set { SetValue(HasTextPropertyKey, value); }
         }
+
+
+        public string ReqularExpression
+        {
+            get
+            {
+                return Text;
+            }
+        }
+
         #endregion
 
 
@@ -251,8 +270,22 @@ namespace TMTech.Shared.WPFLIB.Controls
         }
 
 
+        public string GetRegularExpression()
+        {
+            string value = this.Text;
 
+            bool hasQuestionChar = value.IndexOf('?') >= 0;
+            bool hasStarChar = value.IndexOf('*') >= 0;
 
+            if (hasQuestionChar && hasStarChar)
+                return "^" + Regex.Escape(value).Replace("\\?", ".").Replace("\\*", ".*") + "$";
+            else if (hasStarChar)
+                return "^" + Regex.Escape(value).Replace("\\*", ".*") + "$";
+            else if (hasQuestionChar)
+                return "^" + Regex.Escape(value).Replace("\\?", ".") + "$";
+
+            return value;
+        }
     }
 
 
