@@ -56,11 +56,17 @@ namespace TMTech.Shared.WPFLIB.Controls
 
         public static DependencyProperty SearchModeProperty = DependencyProperty.Register("SearchMode", typeof(SearchMode), typeof(SearchTextBox), new PropertyMetadata(SearchMode.Instant));
 
-        public static DependencyProperty UseWildcardsProperty = DependencyProperty.Register("UseWildcards", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
-
         private static DependencyPropertyKey HasTextPropertyKey = DependencyProperty.RegisterReadOnly("HasText", typeof(bool), typeof(SearchTextBox), new PropertyMetadata());
 
         public static DependencyProperty HasTextProperty = HasTextPropertyKey.DependencyProperty;
+
+        public static DependencyProperty UseWildcardsProperty = DependencyProperty.Register("UseWildcards", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
+
+        public static DependencyProperty MatchCaseProperty = DependencyProperty.Register("MatchCase", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
+
+        public static DependencyProperty MatchPrefixProperty = DependencyProperty.Register("MatchPrefix", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
+
+        public static DependencyProperty MatchSuffixProperty = DependencyProperty.Register("MatchSuffix", typeof(bool), typeof(SearchTextBox), new PropertyMetadata(false));
 
         public static DependencyProperty SearchEventTimeDelayProperty = DependencyProperty.Register("SearchEventTimeDelay", typeof(Duration), typeof(SearchTextBox),
             new FrameworkPropertyMetadata(
@@ -104,6 +110,28 @@ namespace TMTech.Shared.WPFLIB.Controls
             get { return (bool)GetValue(UseWildcardsProperty); }
             set { SetValue(UseWildcardsProperty, value); }
         }
+
+        public bool MatchCase
+        {
+            get { return (bool)GetValue(MatchCaseProperty); }
+            set { SetValue(MatchCaseProperty, value); }
+        }
+
+        public bool MatchPrefix
+        {
+            get { return (bool)GetValue(MatchPrefixProperty); }
+            set { SetValue(MatchPrefixProperty, value); }
+        }
+
+
+        public bool MatchSuffix
+        {
+            get { return (bool)GetValue(MatchSuffixProperty); }
+            set { SetValue(MatchSuffixProperty, value); }
+        }
+
+
+
 
         public bool HasText
         {
