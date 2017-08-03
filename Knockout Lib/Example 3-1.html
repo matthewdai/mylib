@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Binding with KnockoutJS</title>
+    </head>
+
+    <body>
+
+        <ul>
+        <!-- ko foreach: books -->
+            <li data-bind="text: title"></li>
+        <!-- /ko -->
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>ISBN</th>
+                    <th>Published</th>
+                </tr>
+            </thead>             
+            <tbody data-bind="foreach: books">
+                <tr>
+                    <td data-bind="text: title"></td>
+                    <td data-bind="text: isbn"></td>
+                    <td data-bind="text: $parent.formatDate(publishedDate)"></td>
+                </tr>
+            </tbody>   
+        </table>
+
+        <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+        <script>
+            var MyViewModel = function() {
+                var self = this;
+
+                self.books = [
+                             {title: 'Rapid application develop', isbn: '1464544', publishedDate: '2011-02-17'},
+                             {title: '20 receipte', isbn: '1234654', publishedDate: '2011-10-14'},
+                             {title: 'Microsoft CRM', isbn: '3435555', publishedDate: '2016-03-06'},
+                             ];
+
+                self.formatDate = function(dateToFormat) {
+                    var months = new Array("January", "Feb", "Mar", "April", "May", "June", "July", "August", "Sep", "Oct", "Nov", "Dec");
+                    var d = new Date(dateToFormat);
+                    return months[d.getMonth()] + ' ' + d.getDate() + ", " + d.getFullYear();
+                };
+            };
+          
+
+            var viewmodel = new MyViewModel();
+            ko.applyBindings(viewmodel);
+        </script> 
+        
+    </body> 
+</html>

@@ -6,7 +6,7 @@
 
     <body>
 
-        <button type="submit" data-bind="text: (id == 0) ? 'Create' : 'Update'"></button>
+        <button type="submit" data-bind="text: ($data.id == 0) ? 'Create' : 'Update'"></button>
         
 
         <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
@@ -15,7 +15,7 @@
                 var self = this;
 
                 self.name = name;
-                self.id = 1;
+                self.id = 0;
 
                 self.getName = function() {
                     return 'Hello <em>' + self.name + '</em>';
