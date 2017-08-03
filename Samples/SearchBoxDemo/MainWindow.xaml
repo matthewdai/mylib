@@ -1,20 +1,46 @@
-﻿<Window x:Class="SearchBoxDemo.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SearchBoxDemo"
         xmlns:lib="clr-namespace:TMTech.Shared.WPFLIB.Controls;assembly=TMTech.Shared.WPFLIB"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"  x:Class="SearchBoxDemo.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
-        <lib:SearchTextBox DockPanel.Dock="Top" Margin="5"></lib:SearchTextBox>
-        <TextBox DockPanel.Dock="Top" Margin="5">dsf</TextBox>
-        <TreeView BorderThickness="0 1 0 0">
-            <TreeViewItem Header="Apple"></TreeViewItem>
-            <TreeViewItem Header="Pear"></TreeViewItem>
-            <TreeViewItem Header="Orrange"></TreeViewItem>
-            <TreeViewItem Header="Peach"></TreeViewItem>
-        </TreeView>
+
+        <StackPanel DockPanel.Dock="Top" Margin="5 0 5 5" >
+            <DockPanel>
+                <ToggleButton DockPanel.Dock="Right" Click="ToggleButton_Click">Show Moew</ToggleButton>
+                <lib:SearchTextBox x:Name="searchBox" Search="SearchTextBox_Search"/>
+            </DockPanel>
+            
+            <Grid x:Name="optionPanel" Margin="0 5 0 5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="chkUseWildcards" IsChecked="{Binding UseWildcards, ElementName=searchBox, Mode=TwoWay}" >Use wildcards</CheckBox>
+            </Grid>
+ 
+        </StackPanel>
+        
+
+        <Grid Margin="5 0 5 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="list" ItemsSource="{Binding AllNames}">
+            </ListBox>
+
+            <ListBox Grid.Column="1">
+            </ListBox>
+        </Grid>
+
+   
+
     </DockPanel>
 </Window>
