@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Binding with KnockoutJS</title>
+    </head>
+
+    <body>
+
+        <script type='text/javascript' src='js/knockout-3.2.0.js'></script>    
+
+        <script>
+            function ViewModel() {
+                var self = this;
+
+                self.firstName = ko.observable('Steve');
+                self.lastName = ko.observable('Kennedy');
+
+                self.pureComputedExecutions = 0;
+                self.computedExecutions = 0;
+
+                self.pureComputedFullName = ko.pureComputed(function() {
+                    // This is not recommended.
+                    self.pureComputedExecutions++;
+                    return 'Hello ' + self.firstName() + ' ' + self.lastName();
+                });
+
+                self.ComputedFullName = ko.computed(function() {
+                    self.computedExecutions++;
+                    return 'Hello ' + self.firstName() + ' ' + self.lastName();
+                });
+
+            };
+          
+            var viewmodel = new ViewModel();
+            ko.applyBindings(viewmodel);
+
+            alert('Pure computed executions: ' + viewmodel.pureComputedExecutions);
+            alert('Computed executions: ' + viewmodel.computedExecutions);
+            
+        </script> 
+        
+    </body> 
+
+
+</html>

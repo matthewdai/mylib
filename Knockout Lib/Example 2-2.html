@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Binding with KnockoutJS</title>
+    </head>
+
+    <body>
+
+        <button type="submit" data-bind="text: ($data.id == 0) ? 'Create' : 'Update'"></button>
+        
+
+        <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+        <script>
+            var MyViewModel = function(name) {
+                var self = this;
+
+                self.name = name;
+                self.id = 0;
+
+                self.getName = function() {
+                    return 'Hello <em>' + self.name + '</em>';
+                }
+
+            };
+          
+
+            var viewmodel = new MyViewModel("Fred Dai");
+            ko.applyBindings(viewmodel);
+        </script> 
+        
+    </body> 
+</html>
