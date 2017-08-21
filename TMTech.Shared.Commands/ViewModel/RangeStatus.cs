@@ -14,26 +14,93 @@ namespace TMTech.Shared.Commands.ViewModel
 
 
         #region properties
-        public bool Bold { get; private set; }
+        private bool mBold;
+        public bool Bold { get { return mBold; }
+            private set
+            {
+                if (mBold != value)
+                {
+                    mBold = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
-        public bool Italic { get; private set; }
+        private bool mItalic;
+        public bool Italic { get { return mItalic; }
+            private set
+            {
+                if (mItalic != value)
+                {
+                    mItalic = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
-        public bool Underline { get; private set; }
 
-        public bool Locked { get; private set; }
+        public bool mUnderline;
+        public bool Underline { get { return mUnderline; }
+            private set
+            {
+                if (mUnderline != value)
+                {
+                    mUnderline = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
-        public HAlign HorizontalAlignment { get; private set; }
 
-        public bool HorizontalAlignmentLeft { get; private set; }
+        private bool mLocked;
+        public bool Locked { get { return mLocked; }
+            private set
+            {
+                if (mLocked != value )
+                {
+                    mLocked = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
-        public bool HorizontalAlignmentCenter { get; private set; }
 
-        public bool HorizontalAlignmentRight { get; private set; }
+        private HAlign mHorizontalAlignment;
+        public bool HorizontalAlignmentLeft { get { return mHorizontalAlignment == HAlign.Left; } }
+        public bool HorizontalAlignmentCenter { get { return mHorizontalAlignment == HAlign.Center; } }
+        public bool HorizontalAlignmentRight { get { return mHorizontalAlignment == HAlign.Right; } }
+        public HAlign HorizontalAlignment { get { return mHorizontalAlignment; }
+            private set
+            {
+                if (mHorizontalAlignment != value)
+                {
+                    mHorizontalAlignment = value;
+                    NotifyPropertyChanged();
+                    OnPropertyChanged(nameof(HorizontalAlignmentLeft));
+                    OnPropertyChanged(nameof(HorizontalAlignmentCenter));
+                    OnPropertyChanged(nameof(HorizontalAlignmentRight));
+                }
+            }
+        }
 
-        public VAlign VerticalAlignment { get; private set; }
-        public bool VerticalAlignmentTop { get; private set; }
-        public bool VerticalAlignmentCenter { get; private set; }
-        public bool VerticalAlignmentBottom { get; private set; }
+
+        private VAlign mVerticalAlignment;
+        public bool VerticalAlignmentTop { get { return mVerticalAlignment == VAlign.Top; } }
+        public bool VerticalAlignmentCenter { get { return mVerticalAlignment == VAlign.Center; } }
+        public bool VerticalAlignmentBottom { get { return mVerticalAlignment == VAlign.Bottom; } }
+        public VAlign VerticalAlignment { get { return mVerticalAlignment; }
+            private set
+            {
+                if (mVerticalAlignment != value)
+                {
+                    mVerticalAlignment = value;
+                    NotifyPropertyChanged();
+                    OnPropertyChanged(nameof(VerticalAlignmentTop));
+                    OnPropertyChanged(nameof(VerticalAlignmentCenter));
+                    OnPropertyChanged(nameof(VerticalAlignmentBottom));
+                }
+            }
+        }
 
 
         #endregion
@@ -63,28 +130,7 @@ namespace TMTech.Shared.Commands.ViewModel
             Underline = _WorkbookView.RangeSelection.Font.Underline != SpreadsheetGear.UnderlineStyle.None;
             Locked = _WorkbookView.RangeSelection.Locked;
             HorizontalAlignment = _WorkbookView.RangeSelection.HorizontalAlignment;
-            HorizontalAlignmentLeft = _WorkbookView.RangeSelection.HorizontalAlignment == HAlign.Left;
-            HorizontalAlignmentCenter = _WorkbookView.RangeSelection.HorizontalAlignment == HAlign.Center;
-            HorizontalAlignmentRight = _WorkbookView.RangeSelection.HorizontalAlignment == HAlign.Right;
             VerticalAlignment = _WorkbookView.RangeSelection.VerticalAlignment;
-            VerticalAlignmentTop = _WorkbookView.RangeSelection.VerticalAlignment == VAlign.Top;
-            VerticalAlignmentCenter = _WorkbookView.RangeSelection.VerticalAlignment == VAlign.Center;
-            VerticalAlignmentBottom = _WorkbookView.RangeSelection.VerticalAlignment == VAlign.Bottom;
-
-            OnPropertyChanged(nameof(Bold));
-            OnPropertyChanged(nameof(Italic));
-            OnPropertyChanged(nameof(Underline));
-            OnPropertyChanged(nameof(Locked));
-
-            OnPropertyChanged(nameof(HorizontalAlignment));
-            OnPropertyChanged(nameof(HorizontalAlignmentLeft));
-            OnPropertyChanged(nameof(HorizontalAlignmentCenter));
-            OnPropertyChanged(nameof(HorizontalAlignmentRight));
-
-            OnPropertyChanged(nameof(VerticalAlignment));
-            OnPropertyChanged(nameof(VerticalAlignmentTop));
-            OnPropertyChanged(nameof(VerticalAlignmentCenter));
-            OnPropertyChanged(nameof(VerticalAlignmentBottom));
         }
     }
 }

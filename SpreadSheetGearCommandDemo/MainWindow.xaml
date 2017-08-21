@@ -6,21 +6,35 @@
         xmlns:spg="clr-namespace:SpreadsheetGear.Windows.Controls;assembly=SpreadsheetGear2012.Windows.WPF"
         xmlns:spgcmds="clr-namespace:TMTech.Shared.Commands.SpreadSheetGear;assembly=TMTech.Shared.Commands"
         xmlns:local="clr-namespace:SpreadSheetGearCommandDemo"
-        mc:Ignorable="d"
-        Title="Excel Command Demo" Height="350" Width="525">
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Excel Command Demo" Height="600" Width="800">
     <DockPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <ToggleButton IsChecked="{Binding Bold, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.Bold">Bold</ToggleButton>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <ToggleButton IsChecked="{Binding Bold, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.Bold">Bold</ToggleButton>
 
-            <ToggleButton IsChecked="{Binding HorizontalAlignmentLeft, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Left" Margin="10 0 0 0">H Left</ToggleButton>
-            <ToggleButton IsChecked="{Binding HorizontalAlignmentCenter, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Center">H Center</ToggleButton>
-            <ToggleButton IsChecked="{Binding HorizontalAlignmentRight, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Right">H Right</ToggleButton>
+                <ToggleButton IsChecked="{Binding HorizontalAlignmentLeft, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Left" Margin="10 0 0 0">H Left</ToggleButton>
+                <ToggleButton IsChecked="{Binding HorizontalAlignmentCenter, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Center">H Center</ToggleButton>
+                <ToggleButton IsChecked="{Binding HorizontalAlignmentRight, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.HorizontalAlignment" CommandParameter="Right">H Right</ToggleButton>
 
-            <ToggleButton IsChecked="{Binding VerticalAlignmentTop, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Top" Margin="10 0 0 0">V Top</ToggleButton>
-            <ToggleButton IsChecked="{Binding VerticalAlignmentCenter, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Center">V Center</ToggleButton>
-            <ToggleButton IsChecked="{Binding VerticalAlignmentBottom, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Bottom">V Bottom</ToggleButton>
+                <ToggleButton IsChecked="{Binding VerticalAlignmentTop, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Top" Margin="10 0 0 0">V Top</ToggleButton>
+                <ToggleButton IsChecked="{Binding VerticalAlignmentCenter, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Center">V Center</ToggleButton>
+                <ToggleButton IsChecked="{Binding VerticalAlignmentBottom, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.VerticalAlignment" CommandParameter="Bottom">V Bottom</ToggleButton>
 
-        </StackPanel>
+                <ToggleButton IsChecked="{Binding Locked, Mode=OneWay}" >Locked</ToggleButton>
+
+                <Button Command="spgcmds:SpreadSheetCommands.AutoFilter">Auto Fitter</Button>
+
+                <Button Click="Unprotect_Click">Unprotect</Button>
+                <Button Click="Protect_Click">Protect</Button>
+            </ToolBar>
+
+            <ToolBar>
+                <TextBox x:Name="filterText" Width="100" />
+                <Button Click="Filter_Click">Filter</Button>
+            </ToolBar>
+
+        </ToolBarTray>
         
         <spg:WorkbookView x:Name="wbview" />
     </DockPanel>
