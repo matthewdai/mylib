@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMTech.Shared.WPFLIB", "TMTech.ePERFORM.WPFLIB\TMTech.Shared.WPFLIB.csproj", "{86D6F3B3-2301-4D4C-B3C0-1590E96B85E3}"
 EndProject
@@ -50,6 +50,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexDemo", "Samples\RegexDemo\RegexDemo.csproj", "{98B58AB6-D54F-48E2-B1C0-7CBD3FDB0DB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonDemo", "RibbonDemo\RibbonDemo.csproj", "{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesomeDemo", "FontAwesomeDemo\FontAwesomeDemo.csproj", "{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,6 +181,14 @@ Global
 		{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C}.Release|x64.ActiveCfg = Release|Any CPU
 		{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C}.Release|x64.Build.0 = Release|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,5 +205,6 @@ Global
 		{E92FA8E1-7CB3-4E84-8EB4-9F687A81D325} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{98B58AB6-D54F-48E2-B1C0-7CBD3FDB0DB4} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 		{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
+		{FDA2430F-6CA0-42BD-B4F0-BA15D30C1E91} = {E05C4EB5-287F-4B74-BA7C-A6833A6A1C76}
 	EndGlobalSection
 EndGlobal

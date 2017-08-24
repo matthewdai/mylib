@@ -1,0 +1,23 @@
+﻿<Window x:Class="FontAwesomeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontAwesomeDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <StackPanel >
+
+        <StackPanel Orientation="Horizontal" >
+            <TextBlock Text="I" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock x:Name="tbFontAwesome" Text="&#xf004;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="Font Awesome" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+
+        <TextBlock FontSize="16">go to here to see all icons:  http://fontawesome.io/cheatsheet/</TextBlock>
+
+
+    </StackPanel>
+
+</Window>
