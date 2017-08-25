@@ -5,5 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
+        <FontFamily x:Key="Segoe">/Fonts/segmdl2.ttf#sqgeo</FontFamily>
+        
     </Application.Resources>
 </Application>

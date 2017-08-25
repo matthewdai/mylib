@@ -65,6 +65,35 @@ namespace TMTech.Shared.Commands.ViewModel
         }
 
 
+        //private double mZoomLevel;
+        public double ZoomLevel
+        {
+            get
+            {
+                return (double)_WorkbookView.ActiveWorksheet.WindowInfo.Zoom / 10;
+            }
+            set
+            {
+                int level = (int)value * 10;
+                if (level >= 10 && level <= 400 && level != _WorkbookView.ActiveWorksheet.WindowInfo.Zoom)
+                {
+                    _WorkbookView.GetLock();
+                    try
+                    {
+                        _WorkbookView.ActiveWorksheet.WindowInfo.Zoom = level;
+                        NotifyPropertyChanged();
+                    }
+                    catch {}
+
+                    finally { _WorkbookView.ReleaseLock(); }
+                  
+                    
+                    
+                }
+            }
+        }
+
+
         private HAlign mHorizontalAlignment;
         public bool HorizontalAlignmentLeft { get { return mHorizontalAlignment == HAlign.Left; } }
         public bool HorizontalAlignmentCenter { get { return mHorizontalAlignment == HAlign.Center; } }
@@ -116,6 +145,13 @@ namespace TMTech.Shared.Commands.ViewModel
 
             _WorkbookView.RangeSelectionChanged += _WorkbookView_RangeSelectionChanged;
             _WorkbookView.RangeChanged += _WorkbookView_RangeChanged;
+            _WorkbookView.ActiveTabChanged += _WorkbookView_ActiveTabChanged;
+        }
+
+
+        private void _WorkbookView_ActiveTabChanged(object sender, ActiveTabChangedEventArgs e)
+        {
+            OnPropertyChanged(nameof(ZoomLevel));
         }
 
         private void _WorkbookView_RangeChanged(object sender, RangeChangedEventArgs e)

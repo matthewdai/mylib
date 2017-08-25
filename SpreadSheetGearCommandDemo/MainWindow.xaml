@@ -34,6 +34,11 @@
                 <Button Click="Filter_Click">Filter</Button>
             </ToolBar>
 
+            <ToolBar>
+                <Slider Minimum="1" Maximum="40" Value="{Binding ZoomLevel}" Width="100" />
+                <TextBlock Text="{Binding ZoomLevel}"/>
+            </ToolBar>
+
         </ToolBarTray>
         
         <spg:WorkbookView x:Name="wbview" />
