@@ -326,4 +326,141 @@ namespace SpreadSheetGearCommandDemo
 
 
     }
+
+
+
+    /*
+    * Custom control used to replace default row header content.
+    */
+    public class CustomRowHeaderContent : System.Windows.Controls.ContentControl
+    {
+        public CustomRowHeaderContent()
+        {
+            DefaultStyleKey = typeof(CustomRowHeaderContent);
+        }
+
+        // RowIndex dependency property (for use from XAML).
+        public static readonly System.Windows.DependencyProperty RowIndexProperty =
+            System.Windows.DependencyProperty.Register("RowIndex",
+            typeof(int),
+            typeof(CustomRowHeaderContent),
+            new System.Windows.PropertyMetadata(OnRowIndexPropertyChanged));
+
+        // WorkbookView dependency property (for use from XAML).
+        public static readonly System.Windows.DependencyProperty WorkbookViewProperty =
+            System.Windows.DependencyProperty.Register("WorkbookView",
+            typeof(SpreadsheetGear.Windows.Controls.WorkbookView),
+            typeof(CustomRowHeaderContent),
+            new System.Windows.PropertyMetadata(OnWorkbookViewPropertyChanged));
+
+        // RowIndex property.
+        public int RowIndex
+        {
+            get { return (int)GetValue(RowIndexProperty); }
+            set { SetValue(RowIndexProperty, value); }
+        }
+
+        // WorkbookView property.
+        public SpreadsheetGear.Windows.Controls.WorkbookView WorkbookView
+        {
+            get { return GetValue(WorkbookViewProperty) as SpreadsheetGear.Windows.Controls.WorkbookView; }
+            set { SetValue(WorkbookViewProperty, value); }
+        }
+
+        // RowIndex property changed handler.
+        private static void OnRowIndexPropertyChanged(
+            System.Windows.DependencyObject d, System.Windows.DependencyPropertyChangedEventArgs e)
+        {
+            var rowHeaderContent = d as CustomRowHeaderContent;
+            if (rowHeaderContent != null)
+            {
+                // Update the data state.
+                rowHeaderContent.CheckDataState();
+            }
+        }
+
+        // WorkbookView property changed handler.
+        private static void OnWorkbookViewPropertyChanged(
+            System.Windows.DependencyObject d, System.Windows.DependencyPropertyChangedEventArgs e)
+        {
+            var rowHeaderContent = d as CustomRowHeaderContent;
+            if (rowHeaderContent != null)
+            {
+                var oldView = e.OldValue as SpreadsheetGear.Windows.Controls.WorkbookView;
+                var newView = e.NewValue as SpreadsheetGear.Windows.Controls.WorkbookView;
+
+                // If the workbook view has changed...
+                if (oldView != newView)
+                {
+                    // Set up a Calculate event handler to update the data state.
+                    if (newView != null)
+                    {
+                        newView.Calculate +=
+                            new SpreadsheetGear.Windows.Controls.CalculateEventHandler(rowHeaderContent.workbookView_Calculate);
+                    }
+
+                    // Remove any previous Calculate event handler.
+                    if (oldView != null)
+                    {
+                        newView.Calculate -=
+                            new SpreadsheetGear.Windows.Controls.CalculateEventHandler(rowHeaderContent.workbookView_Calculate);
+                    }
+                }
+
+                // Update the data state.
+                rowHeaderContent.CheckDataState();
+            }
+        }
+
+        // WorkbookView Calculate event handler.
+        private void workbookView_Calculate(object sender,
+            SpreadsheetGear.Windows.Controls.CalculateEventArgs e)
+        {
+            // Update the data state.
+            CheckDataState();
+        }
+
+        private void CheckDataState()
+        {
+            // Ignore if we don't yet have a workbook view reference.
+            if (WorkbookView == null)
+                return;
+
+            // NOTE: Must acquire a workbook set lock.
+            WorkbookView.GetLock();
+            try
+            {
+                // Get a reference to the advanced IValues interface for the worksheet.
+                var values = WorkbookView.ActiveWorksheet as SpreadsheetGear.Advanced.Cells.IValues;
+
+                // DataState defaults to none.
+                string dataState = "None";
+
+                // Get various values from the worksheet.
+                var rowIndex = RowIndex;
+                var store = values[rowIndex, 0];
+                var curSales = values[rowIndex, 5];
+                var lastSales = values[rowIndex, 6];
+
+                // If we have valid sales entries...
+                if (store != null && curSales != null && lastSales != null)
+                {
+                    // Determine if sales were positive or negative...
+                    if (curSales.Number >= lastSales.Number)
+                        dataState = "Positive";
+                    else
+                        dataState = "Negative";
+                }
+
+                // Transition the data state.
+                System.Windows.VisualStateManager.GoToState(this, dataState, true);
+            }
+            finally
+            {
+                // NOTE: Must release the workbook set lock.
+                WorkbookView.ReleaseLock();
+            }
+        }
+    }
 }
+
