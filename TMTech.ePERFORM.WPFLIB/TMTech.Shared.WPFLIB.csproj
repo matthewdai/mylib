@@ -58,8 +58,7 @@
     <Compile Include="Controls\FlatToggleButton.cs" />
     <Compile Include="Converters\BoolInverseConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Converters\ExcelRowHeaderConverter.cs" />
-    <Compile Include="Converters\ExcelHeaderConverter.cs" />
+    <Compile Include="Converters\ExcelHeaderConverters.cs" />
     <Compile Include="Extensions\EnumBindingSourceExtension.cs" />
     <Compile Include="ScreenHandler.cs" />
     <Page Include="Themes\Basic.xaml">
