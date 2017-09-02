@@ -154,6 +154,10 @@
             <Setter Property="BorderBrush" Value="LightGray" />
             <Setter Property="BorderThickness" Value="0 1 0 0" />
             <Setter Property="Background" Value="#ffffff" />
+
+            <Setter Property="RangeSelectionBorderBrush" Value="Orange" />
+            <Setter Property="RangeSelectionBrush" Value="Black" />
+            <Setter Property="RowColumnResizerBrush" Value="Red" />
             <!--<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />-->
         </Style>
     </Window.Resources>
