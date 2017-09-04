@@ -543,9 +543,9 @@
         
     </RibbonWindow.Resources>
 
-    <WindowChrome.WindowChrome>
+    <!--<WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="{x:Static WindowChrome.GlassFrameCompleteThickness}"/>
-    </WindowChrome.WindowChrome>
+    </WindowChrome.WindowChrome>-->
 
     <Grid>
         <Grid.RowDefinitions>
