@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RibbonDemo"
-        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" xmlns:Primitives="clr-namespace:System.Windows.Controls.Ribbon.Primitives;assembly=System.Windows.Controls.Ribbon" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="RibbonDemo.MainWindow2"
-        mc:Ignorable="d"
-        Title="MainWindow2" Height="300" Width="300">
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" 
+        xmlns:Primitives="clr-namespace:System.Windows.Controls.Ribbon.Primitives;assembly=System.Windows.Controls.Ribbon" 
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="RibbonDemo.MainWindow2"
+        mc:Ignorable="d" UseLayoutRounding="True"
+        Title="MainWindow2" Height="600" Width="800" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
             <ControlTemplate TargetType="{x:Type Ribbon}" x:Key="ribbonTemplate">
@@ -238,7 +240,7 @@
     </Window.Resources>
     
     <Grid>
-        <Ribbon x:Name="Ribbon" Title="Ribbon Title" Template="{StaticResource ribbonTemplate}">
+        <Ribbon x:Name="Ribbon" Title="Ribbon Title" Template="{StaticResource ribbonTemplate}" RenderOptions.BitmapScalingMode="HighQuality">
             <Ribbon.HelpPaneContent>
                 <RibbonButton SmallImageSource="Images/settings.png"  Visibility="Collapsed"/>
             </Ribbon.HelpPaneContent>
@@ -254,21 +256,29 @@
                 <RibbonApplicationMenu SmallImageSource="Images\settings.png" Visibility="Collapsed">
                     <RibbonApplicationMenuItem Header="Hello _Ribbon"
 						x:Name="MenuItem1"
-						ImageSource="Images\settings.png"/>
+						ImageSource="Images\play.png"/>
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
        
             <RibbonTab x:Name="HomeTab" Header="Home">
-
                 <RibbonGroup x:Name="Group1" Header="Group1">
-                    <RibbonButton x:Name="Button1" LargeImageSource="Images\settings.png" Label="Button1" />
-                    <RibbonButton x:Name="Button2" SmallImageSource="Images\settings.png" Label="Button2" />
-                    <RibbonButton x:Name="Button3"
-						SmallImageSource="Images\settings.png"
-						Label="Button3" />
-                    <RibbonButton x:Name="Button4"
-						SmallImageSource="Images\settings.png"
-						Label="Button4" />
+                    <RibbonButton x:Name="Button1" LargeImageSource="Images\play.png" Label="Button1" RenderOptions.BitmapScalingMode="HighQuality" />
+                    <RibbonButton x:Name="Button2" SmallImageSource="Images\play.png" Label="Button2" />
+                    <RibbonButton x:Name="Button3" SmallImageSource="Images\settings.png" Label="Button3" />
+                    <RibbonButton x:Name="Button4" SmallImageSource="Images\settings.png" Label="Button4" />
+                    <RibbonMenuButton SmallImageSource="Images\settings.png" Label="Save">
+                        <RibbonGallery SelectedValue="Green" SelectedValuePath="Content" MaxColumnCount="1">
+                            <RibbonGalleryCategory>
+                                <RibbonGalleryItem Content="Green" Foreground="Green" />
+                                <RibbonGalleryItem Content="Blue" Foreground="Blue" />
+                                <RibbonGalleryItem Content="Orange" Foreground="Orange" />
+                            </RibbonGalleryCategory>
+                        </RibbonGallery>
+                    </RibbonMenuButton>
+                    <RibbonMenuButton LargeImageSource="Images\settings.png" Label="Save">
+                        <RibbonMenuItem Header="Save" Click="RibbonMenuItem_Click"/>
+                        <RibbonMenuItem Header="Close" />
+                    </RibbonMenuButton>
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>

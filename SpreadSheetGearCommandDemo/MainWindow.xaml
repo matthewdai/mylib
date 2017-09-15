@@ -187,6 +187,7 @@
             <ToolBar>
                 <TextBox x:Name="filterText" Width="100" />
                 <Button Click="Filter_Click">Filter</Button>
+                <Button Click="ClearFilter_Click">Clear Filter</Button>
             </ToolBar>
 
             <ToolBar>

@@ -80,13 +80,31 @@ namespace SpreadSheetGearCommandDemo
             {
                 var sheet = wbview.ActiveWorksheet;
                 //sheet.Range["a"].AutoFilter(2, "Hedge funds", AutoFilterOperator.Or, null, true);
-                sheet.Range["a5"].AutoFilter(0, "9", AutoFilterOperator.Or, null, true);
+                sheet.Range["a5"].AutoFilter(0, filterText.Text, AutoFilterOperator.Or, null, true);
+            }
+            catch { }
+            finally { wbview.ReleaseLock(); }
+
+
+
+        }
+
+
+        private void ClearFilter_Click(object sender, RoutedEventArgs e)
+        {
+            wbview.GetLock();
+            try
+            {
+                var sheet = wbview.ActiveWorksheet;
+                //sheet.Range["a"].AutoFilter(2, "Hedge funds", AutoFilterOperator.Or, null, true);
+                //sheet.Range["a5"].AutoFilter(0, filterText.Text, AutoFilterOperator.Or, null, true);
+
+                sheet.Range["a5"].AutoFilter();
             }
             catch { }
             finally { wbview.ReleaseLock(); }
 
         }
-
 
 
         private void FilterSingleItem(SpreadsheetGear.Windows.Controls.WorkbookView workbookView)
@@ -323,7 +341,6 @@ namespace SpreadSheetGearCommandDemo
                 workbookView.ReleaseLock();
             }
         }
-
 
     }
 

@@ -23,5 +23,10 @@ namespace RibbonDemo
         {
             InitializeComponent();
         }
+
+        private void RibbonMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Save the file.");
+        }
     }
 }
