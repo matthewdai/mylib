@@ -4,22 +4,23 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67E53DD5-0769-408E-A606-D166F4B7BAF5}</ProjectGuid>
+    <ProjectGuid>{9C4B104E-041F-4FD6-AFC9-7AAC98AD067C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpreadSheetGearCommandDemo</RootNamespace>
-    <AssemblyName>SpreadSheetGearCommandDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>RibbonDemo</RootNamespace>
+    <AssemblyName>RibbonDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,23 +29,21 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SpreadsheetGear2012.Core">
-      <HintPath>..\lib\SpreadsheetGear2012.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SpreadsheetGear2012.Drawing">
-      <HintPath>..\lib\SpreadsheetGear2012.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="SpreadsheetGear2012.Windows.WPF">
-      <HintPath>..\lib\SpreadsheetGear2012.Windows.WPF.dll</HintPath>
-    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="presentationframework.aero2" />
+    <Reference Include="presentationframework.aerolite" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="PresentationFramework.Royale" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -75,8 +74,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow2.xaml.cs">
+      <DependentUpon>MainWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -104,14 +110,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TMTech.ePERFORM.WPFLIB\TMTech.Shared.WPFLIB.csproj">
-      <Project>{86d6f3b3-2301-4d4c-b3c0-1590e96b85e3}</Project>
-      <Name>TMTech.Shared.WPFLIB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TMTech.Shared.Commands\TMTech.Shared.Commands.csproj">
-      <Project>{72052db1-e0c3-46ef-bf82-01b96b560e6f}</Project>
-      <Name>TMTech.Shared.Commands</Name>
-    </ProjectReference>
+    <Resource Include="Images\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,7 +56,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Icons\Letter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Icons\OptionsPath.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\FormatPath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Icons\UndoPath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Icons\PrintPath.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,8 +92,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Icons\Letter.xaml.cs">
+      <DependentUpon>Letter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Icons\OptionsPath.xaml.cs">
       <DependentUpon>OptionsPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\FormatPath.xaml.cs">
+      <DependentUpon>FormatPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\UndoPath.xaml.cs">
+      <DependentUpon>UndoPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\PrintPath.xaml.cs">
+      <DependentUpon>PrintPath.xaml</DependentUpon>
     </Compile>
     <Compile Include="Icons\ReportPath.xaml.cs">
       <DependentUpon>ReportPath.xaml</DependentUpon>

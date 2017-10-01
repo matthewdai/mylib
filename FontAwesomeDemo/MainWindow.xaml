@@ -1,0 +1,48 @@
+﻿<Window x:Class="FontAwesomeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontAwesomeDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel >
+
+        <StackPanel Orientation="Horizontal" >
+            <Path Data="M12.000001,9.1442852 L13.142858,9.1442852 C13.29762,9.1442852 13.431548,9.2008324 13.544643,9.3139286 C13.657739,9.4270248 13.714287,9.5609512 13.714287,9.7157135 L13.714287,13.715714 L17.714287,13.715714 C17.869049,13.715714 18.002975,13.772262 18.116072,13.885357 C18.229168,13.998452 18.285715,14.13238 18.285715,14.287143 L18.285715,15.429999 C18.285715,15.584763 18.229168,15.718691 18.116072,15.831785 C18.002975,15.944881 17.869049,16.001429 17.714287,16.001429 L13.714287,16.001429 L13.714287,20.001429 C13.714287,20.156191 13.657739,20.290119 13.544643,20.403214 C13.431548,20.51631 13.29762,20.572857 13.142858,20.572857 L12.000001,20.572857 C11.845238,20.572857 11.711309,20.51631 11.598215,20.403214 C11.485119,20.290119 11.428572,20.156191 11.428572,20.001429 L11.428572,16.001429 L7.4285717,16.001429 C7.2738094,16.001429 7.1398811,15.944881 7.0267859,15.831785 C6.9136906,15.718691 6.8571434,15.584763 6.8571434,15.429999 L6.8571434,14.287143 C6.8571434,14.13238 6.9136906,13.998452 7.0267859,13.885357 C7.1398811,13.772262 7.2738094,13.715714 7.4285717,13.715714 L11.428572,13.715714 L11.428572,9.7157135 C11.428572,9.5609512 11.485119,9.4270248 11.598215,9.3139286 C11.711309,9.2008324 11.845238,9.1442852 12.000001,9.1442852 z M12.571429,6.8585701 C10.369047,6.8585701 8.4851189,7.6413097 6.9196434,9.2067852 C5.354167,10.772263 4.5714288,12.656191 4.5714288,14.858571 C4.5714288,17.060953 5.354167,18.944881 6.9196434,20.510357 C8.4851189,22.075832 10.369047,22.858572 12.571429,22.858572 C14.773809,22.858572 16.657738,22.075832 18.223215,20.510357 C19.788691,18.944881 20.57143,17.060953 20.57143,14.858571 C20.57143,12.656191 19.788691,10.772263 18.223215,9.2067852 C16.657738,7.6413097 14.773809,6.8585701 12.571429,6.8585701 z M12.571429,2.2871418 C14.273809,2.2871437 15.901786,2.6175003 17.455359,3.2782135 C19.00893,3.9389286 20.348215,4.8317871 21.473215,5.9567852 C22.598213,7.0817852 23.491072,8.4210701 24.151787,9.9746418 C24.8125,11.528214 25.142857,13.156191 25.142859,14.858571 C25.142857,17.477619 24.404762,19.852619 22.928572,21.983572 L29.053574,28.108572 C29.494047,28.549047 29.714285,29.084763 29.714287,29.715715 C29.714285,30.346666 29.49107,30.885357 29.044643,31.331787 C28.598213,31.778214 28.059525,32.001431 27.428574,32.001431 C26.785715,32.001431 26.25,31.775238 25.82143,31.322857 L19.69643,25.215714 C17.565475,26.691906 15.190475,27.43 12.571429,27.43 C10.869047,27.43 9.2410717,27.099644 7.6875005,26.438929 C6.1339283,25.778215 4.7946424,24.885357 3.6696429,23.760357 C2.5446429,22.635357 1.6517857,21.296072 0.99107128,19.7425 C0.33035716,18.188929 0,16.560953 -6.8119505E-08,14.858571 C0,13.156191 0.33035716,11.528214 0.99107128,9.9746418 C1.6517857,8.4210701 2.5446429,7.0817852 3.6696429,5.9567852 C4.7946424,4.8317871 6.1339283,3.9389286 7.6875005,3.2782135 C9.2410717,2.6175003 10.869047,2.2871437 12.571429,2.2871418 z" 
+                  Fill="Red" Height="29.714" Margin="10" RenderTransformOrigin="0.5,0.5" Stretch="Fill" VerticalAlignment="Center" Width="29.714">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </StackPanel>
+
+        <TextBlock FontSize="16">go to here to see all icons:  http://fontawesome.io/cheatsheet/</TextBlock>
+
+        <!--<UniformGrid Rows="10" Columns="10">
+            <TextBlock Text="&#xe71f;" FontFamily="{DynamicResource Segoe}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="abcdefg" FontFamily="{DynamicResource {x:Static SystemFonts.MenuFontFamilyKey}}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="&#x2465;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="&#x2466;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="&#x2467;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="&#x2468;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+            <TextBlock Text="&#x2469;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
+        </UniformGrid>-->
+        
+
+
+    </StackPanel>
+
+</Window>

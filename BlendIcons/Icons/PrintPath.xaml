@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="BlendIcons.Icons.PrintPath"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BlendIcons.Icons"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+
+
+
+    <Grid Background="White">
+        <!--<Path Data="M1.2500001,0.25 L7.7500001,0.25 C8.3022853,0.25 8.7500001,0.69771522 8.7500001,1.2500001 L8.7500001,3.25 0.25,3.25 0.25,1.2500001 C0.25000012,0.69771522 0.69771534,0.25 1.2500001,0.25 z" HorizontalAlignment="Center" Height="3.5" Margin="45.5,42.5,45.5,54" Stretch="Fill" VerticalAlignment="Center" Width="9"/>
+        <Path Data="M1.2500001,0.25 L13.75,0.25 C14.302285,0.25 14.75,0.69771522 14.75,1.2500001 L14.75,7.75 C14.75,8.3022852 14.302285,8.75 13.75,8.75 L11.75,8.75 11.75,4.625 3.2500001,4.625 3.2500001,8.75 1.2500001,8.75 C0.69771533,8.75 0.2500001,8.3022852 0.25,7.75 L0.25,1.2500001 C0.2500001,0.69771522 0.69771533,0.25 1.2500001,0.25 z" HorizontalAlignment="Center" Height="9" Margin="42.5,45.5" Stretch="Fill" VerticalAlignment="Center" Width="15" />
+        <Path Data="M0.25,0.25 L8.7499999,0.25 8.7499999,4.3750002 8.7499999,6.3750002 C8.7499999,6.9272845 8.3022851,7.3750002 7.7499999,7.3750002 L1.2499999,7.3750002 C0.69771513,7.3750002 0.24999991,6.9272845 0.25,6.3750002 L0.25,4.3750002 z" HorizontalAlignment="Center" Height="7.625" Margin="45.5,49.875,45.5,42.5" Stretch="Fill" VerticalAlignment="Center" Width="9"/>-->
+
+        <Grid>
+            <Path Data="M4.5500002,12.537 L4.5500002,12.737 10.45,12.737 10.45,12.537 z M4.5500002,10.912 L4.5500002,11.112 10.45,11.112 10.45,10.912 z M4.5500002,9.2869996 L4.5500002,9.4870004 10.45,9.4870004 10.45,9.2869996 z M3.3,7.6207542 L11.7,7.6207542 11.7,11.745316 11.7,13.745105 C11.7,14.297331 11.257552,14.745 10.711764,14.745 L4.2882352,14.745 C3.7424479,14.745 3.3,14.297331 3.3,13.745105 L3.3,11.745316 z M2.6665001,4.8039998 C2.5560431,4.8039998 2.4665,4.8935432 2.4665,5.0040001 2.4665,5.1144571 2.5560431,5.2039999 2.6665001,5.2039999 2.776957,5.2039999 2.8664999,5.1144571 2.8664999,5.0040001 2.8664999,4.8935432 2.776957,4.8039998 2.6665001,4.8039998 z M1.2500001,3.2451031 L13.75,3.2451031 C14.302285,3.2451031 14.75,3.6928336 14.75,4.2451376 L14.75,10.745361 C14.75,11.297666 14.302285,11.745396 13.75,11.745396 L11.75,11.745396 11.75,7.6202535 3.25,7.6202535 3.25,11.745396 1.2500001,11.745396 C0.69771534,11.745396 0.25000009,11.297666 0.25,10.745361 L0.25,4.2451376 C0.25000009,3.6928336 0.69771534,3.2451031 1.2500001,3.2451031 z M4.2882352,0.25 L10.711764,0.25 C11.257552,0.24999975 11.7,0.69623792 11.7,1.2467007 L11.7,3.2401027 3.3,3.2401027 3.3,1.2467007 C3.3000002,0.69623792 3.7424481,0.24999975 4.2882352,0.25 z" HorizontalAlignment="Center" Height="14.995" Margin="42.5,42.505,42.5,42.5" Stretch="Fill" VerticalAlignment="Center" Width="15"/>
+        </Grid>
+
+
+        <!--<Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="9" Height="15" RadiusX="1" RadiusY="1"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="15" Height="9" RadiusX="1" RadiusY="1"/>
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="9" Margin="45.5,49.875,45.5,35.125"/>-->
+
+
+
+    </Grid>
+
+</UserControl>
