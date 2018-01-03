@@ -40,7 +40,6 @@
             <TextBlock Text="&#x2468;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
             <TextBlock Text="&#x2469;" FontFamily="{StaticResource FontAwesome}" Foreground="Red" FontSize="32" Margin="10" VerticalAlignment="Center"></TextBlock>
         </UniformGrid>-->
-        
 
 
     </StackPanel>
