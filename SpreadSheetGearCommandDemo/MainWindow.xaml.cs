@@ -346,67 +346,67 @@ namespace SpreadSheetGearCommandDemo
         private void FillColorScheama(SpreadsheetGear.Windows.Controls.WorkbookView workbookView, SpreadsheetGear.Themes.ColorSchemeIndex seedColor)
         {
             // NOTE: Must acquire a workbook set lock.
-            //workbookView.GetLock();
-            //try
-            //{
-            //    var rng = workbookView.RangeSelection;
-
-            //    double tint = -0.9;
-            //    int offset = 0;
-
-            //    //seedColor = SpreadsheetGear.Themes.ColorSchemeIndex.Accent2;
-
-            //    do
-            //    {
-            //        rng.Offset(offset, 0).Interior.ThemeColor = seedColor; // SpreadsheetGear.Themes.ColorSchemeIndex.Accent1;
-            //        rng.Offset(offset, 0).Value = (int)seedColor;
-            //        rng.Offset(offset, 0).Interior.TintAndShade = tint;
-            //        offset++;
-            //        tint += 0.1;
-
-            //    } while (tint <= 1);
-
-            //}
-            //finally
-            //{
-            //    // NOTE: Must release the workbook set lock.
-            //    workbookView.ReleaseLock();
-            //}
-
             workbookView.GetLock();
-
-            // Use theme colors in combination with "tint and shade" to demonstrate creating a fuller range of colors.
-            SpreadsheetGear.Themes.ColorSchemeIndex[] seedColors = {
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent1,
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent2,
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent3,
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent4,
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent5,
-                    SpreadsheetGear.Themes.ColorSchemeIndex.Accent6
-                };
-
-            // Iterate through each theme color and set some range based off startingRange.
-            SpreadsheetGear.IRange startingRange = workbookView.ActiveWorksheet.Cells["B4:B17"];
-            for (int i = 0; i < seedColors.Length; i++)
+            try
             {
-                SpreadsheetGear.IRange currentRange = startingRange.Offset(0, i);
+                var rng = workbookView.RangeSelection;
 
-                // Set the whole range to use the specified theme color.
-                currentRange.Interior.ThemeColor = seedColors[i];
+                double tint = -0.9;
+                int offset = 0;
 
-                // TintAndShade values of 1.0 and -1.0 indicate white and black, respectively.  
-                // Setting limits here to avoid displaying these max B&W values.
-                double brightnessLimit = 0.9;
-                double darknessLimit = -0.9;
+                //seedColor = SpreadsheetGear.Themes.ColorSchemeIndex.Accent2;
 
-                // Gradually darken the theme color as we iterate down the range
-                for (int j = 0; j < currentRange.RowCount; j++)
+                do
                 {
-                    currentRange[j, 0].Interior.TintAndShade = brightnessLimit - (((double)j / (double)currentRange.RowCount) * (brightnessLimit - darknessLimit));
-                }
+                    rng.Offset(offset, 0).Interior.ThemeColor = seedColor; // SpreadsheetGear.Themes.ColorSchemeIndex.Accent1;
+                    rng.Offset(offset, 0).Value = (int)seedColor;
+                    rng.Offset(offset, 0).Interior.TintAndShade = tint;
+                    offset++;
+                    tint += 0.1;
+
+                } while (tint <= 0.9);
+
+            }
+            finally
+            {
+                // NOTE: Must release the workbook set lock.
+                workbookView.ReleaseLock();
             }
 
-            workbookView.ReleaseLock();
+            //workbookView.GetLock();
+
+            //// Use theme colors in combination with "tint and shade" to demonstrate creating a fuller range of colors.
+            //SpreadsheetGear.Themes.ColorSchemeIndex[] seedColors = {
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent1,
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent2,
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent3,
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent4,
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent5,
+            //        SpreadsheetGear.Themes.ColorSchemeIndex.Accent6
+            //    };
+
+            //// Iterate through each theme color and set some range based off startingRange.
+            //SpreadsheetGear.IRange startingRange = workbookView.ActiveWorksheet.Cells["B4:B17"];
+            //for (int i = 0; i < seedColors.Length; i++)
+            //{
+            //    SpreadsheetGear.IRange currentRange = startingRange.Offset(0, i);
+
+            //    // Set the whole range to use the specified theme color.
+            //    currentRange.Interior.ThemeColor = seedColors[i];
+
+            //    // TintAndShade values of 1.0 and -1.0 indicate white and black, respectively.  
+            //    // Setting limits here to avoid displaying these max B&W values.
+            //    double brightnessLimit = 0.9;
+            //    double darknessLimit = -0.9;
+
+            //    // Gradually darken the theme color as we iterate down the range
+            //    for (int j = 0; j < currentRange.RowCount; j++)
+            //    {
+            //        currentRange[j, 0].Interior.TintAndShade = brightnessLimit - (((double)j / (double)currentRange.RowCount) * (brightnessLimit - darknessLimit));
+            //    }
+            //}
+
+            //workbookView.ReleaseLock();
         }
 
         private void ColorScheama_Click(object sender, RoutedEventArgs e)
