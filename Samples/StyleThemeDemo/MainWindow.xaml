@@ -1,0 +1,36 @@
+﻿<Window x:Class="StyleThemeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleThemeDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ListView.xaml" />
+                <ResourceDictionary Source="Resources/ComboBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    
+    <UniformGrid>
+        <ListView ItemsSource="{Binding Books}" Style="{StaticResource static_listview_style}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="Publisher" DisplayMemberBinding="{Binding Publisher}" />
+                    <GridViewColumn Header="Date Published" DisplayMemberBinding="{Binding PublishDate, StringFormat=MM/dd/yyyy}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <ComboBox ItemsSource="{Binding Books}" VerticalAlignment="Top" 
+                  Style="{StaticResource default_combobox_style}">
+        </ComboBox>
+    </UniformGrid>
+</Window>

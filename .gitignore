@@ -191,5 +191,4 @@ ModelManifest.xml
 
 real-version.wxi
 license_ro.rtf
-
-*.vs/
+.vs/
