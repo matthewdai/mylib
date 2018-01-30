@@ -1,0 +1,38 @@
+﻿<Window x:Class="Tools.WordProcess.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tools.WordProcess"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="Process_Click">Process</Button>    
+        </ToolBar>
+                
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel>
+                <Label DockPanel.Dock="Top">Source Text:</Label>
+                <ScrollViewer>
+                    <TextBox x:Name="textSource" AcceptsReturn="True" TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </DockPanel>
+
+            <DockPanel Grid.Column="1">
+                <Label DockPanel.Dock="Top">Target Text:</Label>
+                <ScrollViewer>
+                    <TextBox x:Name="textTarget" AcceptsReturn="True" TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </DockPanel>
+
+        </Grid>
+    </DockPanel>
+
+</Window>
