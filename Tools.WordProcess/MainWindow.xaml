@@ -8,13 +8,20 @@
         Title="MainWindow" Height="600" Width="800">
 
     <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
-            <Button Click="Process_Click">Process</Button>
-            <Button Click="Clear_Click">Clear</Button>
-            <Separator />
-            <TextBox x:Name="textUrl" MinWidth="300"></TextBox>
-            <Button Click="GetUrl_Click">Get URL</Button>
-        </ToolBar>
+        <ToolBarTray DockPanel.Dock="Top" >
+            <ToolBar>
+                <Button Click="ImportFiles_Click">Import</Button>
+            </ToolBar>
+            
+            <ToolBar>
+                <Button Click="Process_Click">Process</Button>
+                <Button Click="Clear_Click">Clear</Button>
+                <Separator />
+                <TextBox x:Name="textUrl" MinWidth="300"></TextBox>
+                <Button Click="GetUrl_Click">Get URL</Button>
+            </ToolBar>
+
+        </ToolBarTray>
                 
         <Grid>
             <Grid.ColumnDefinitions>

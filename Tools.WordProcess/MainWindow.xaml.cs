@@ -60,5 +60,16 @@ namespace Tools.WordProcess
             var text = WordProcessTool.GetTextFromUrl(textUrl.Text);
             this.textSource.Text = text; 
         }
+
+        private void ImportFiles_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Windows.ReadMultipleFiles();
+            if (win.ShowDialog() == true)
+            {
+                this.textSource.Text = win.Text;
+            }
+
+
+        }
     }
 }
