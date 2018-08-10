@@ -48,5 +48,17 @@ namespace Tools.WordProcess
             Clipboard.SetText(result);
 
         }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.textSource.Clear();
+            this.textTarget.Clear();
+        }
+
+        private void GetUrl_Click(object sender, RoutedEventArgs e)
+        {
+            var text = WordProcessTool.GetTextFromUrl(textUrl.Text);
+            this.textSource.Text = text; 
+        }
     }
 }

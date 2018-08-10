@@ -9,7 +9,11 @@
 
     <DockPanel>
         <ToolBar DockPanel.Dock="Top">
-            <Button Click="Process_Click">Process</Button>    
+            <Button Click="Process_Click">Process</Button>
+            <Button Click="Clear_Click">Clear</Button>
+            <Separator />
+            <TextBox x:Name="textUrl" MinWidth="300"></TextBox>
+            <Button Click="GetUrl_Click">Get URL</Button>
         </ToolBar>
                 
         <Grid>
