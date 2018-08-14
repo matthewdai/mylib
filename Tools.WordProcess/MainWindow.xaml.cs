@@ -64,6 +64,7 @@ namespace Tools.WordProcess
         private void ImportFiles_Click(object sender, RoutedEventArgs e)
         {
             var win = new Windows.ReadMultipleFiles();
+            win.Owner = this;
             if (win.ShowDialog() == true)
             {
                 this.textSource.Text = win.Text;

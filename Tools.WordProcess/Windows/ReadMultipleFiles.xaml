@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tools.WordProcess.Windows"
         mc:Ignorable="d"
-        Title="ReadMultipleFiles" Height="450" Width="800">
+        Title="Import Files" Height="200" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="TextBox">
-            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="3" />
-            <Setter Property="Width" Value="100" />
+            <!--<Setter Property="Width" Value="100" />-->
         </Style>
 
         <Style TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0 3" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="60"/>
         </Style>
 
     </Window.Resources>
@@ -28,7 +32,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid Margin="15 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -37,8 +41,8 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0">Start:</TextBlock>
@@ -52,9 +56,9 @@
             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Folder}"></TextBox>
         </Grid>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             <Button Click="Ok_Click">Ok</Button>
-            <Button Click="Cancel_Click">Cancel</Button>
+            <Button Click="Cancel_Click" Margin="10 0 0 0">Cancel</Button>
         </StackPanel>
         
     </Grid>
