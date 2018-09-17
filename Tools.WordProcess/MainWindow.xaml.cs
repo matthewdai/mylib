@@ -48,5 +48,29 @@ namespace Tools.WordProcess
             Clipboard.SetText(result);
 
         }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.textSource.Clear();
+            this.textTarget.Clear();
+        }
+
+        private void GetUrl_Click(object sender, RoutedEventArgs e)
+        {
+            var text = WordProcessTool.GetTextFromUrl(textUrl.Text);
+            this.textSource.Text = text; 
+        }
+
+        private void ImportFiles_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Windows.ReadMultipleFiles();
+            win.Owner = this;
+            if (win.ShowDialog() == true)
+            {
+                this.textSource.Text = win.Text;
+            }
+
+
+        }
     }
 }

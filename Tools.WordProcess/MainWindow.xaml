@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tools.WordProcess"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Word Process" Height="600" Width="800" WindowStartupLocation="CenterScreen">
 
     <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
-            <Button Click="Process_Click">Process</Button>    
-        </ToolBar>
+            <ToolBar DockPanel.Dock="Top">
+                <Button Click="ImportFiles_Click">Import</Button>
+                <Button Click="Process_Click">Process</Button>
+                <Button Click="Clear_Click">Clear</Button>
+                <Separator />
+                <TextBox x:Name="textUrl" MinWidth="100"></TextBox>
+                <Button Click="GetUrl_Click">Get URL</Button>
+            </ToolBar>
                 
         <Grid>
             <Grid.ColumnDefinitions>
