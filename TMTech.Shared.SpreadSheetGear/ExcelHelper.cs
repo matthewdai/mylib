@@ -116,7 +116,43 @@ namespace TMTech.Shared.SpreadSheetGear
             //}
         }
 
-            
+        public static void SetUsedRangeHorizonalBorder(IWorksheet sheet)
+        {
+            IRange rng = sheet.UsedRange;
+            if (rng.RowCount == 0 || rng.ColumnCount == 0) return;
+
+            var border = rng.Borders[BordersIndex.InsideHorizontal];
+            border.LineStyle = LineStyle.Continous;
+            border.Weight = BorderWeight.Thin;
+            border.Color = Colors.LightGray;
+        }
+
+
+        public static void SetRangeHorizonalBorder(IRange rng)
+        {
+            if (rng.RowCount == 0 || rng.ColumnCount == 0) return;
+            var border = rng.Borders[BordersIndex.InsideHorizontal];
+            SetBorder(border);
+        }
+
+        public static void SetRangeEdgeBorder(IRange range, bool top = true, bool bottom = true, bool left = true, bool right = true)
+        {
+            if (range.RowCount == 0 || range.ColumnCount == 0) return;
+            if (top) SetBorder(range.Borders[BordersIndex.EdgeTop]);
+            if (bottom) SetBorder(range.Borders[BordersIndex.EdgeBottom]);
+            if (left) SetBorder(range.Borders[BordersIndex.EdgeLeft]);
+            if (right) SetBorder(range.Borders[BordersIndex.EdgeRight]);
+        }
+
+        private static void SetBorder(IBorder border)
+        {
+            border.LineStyle = LineStyle.Continous;
+            border.Weight = BorderWeight.Thin;
+            border.Color = Colors.LightGray;
+        }
+
+
+
         /// <summary>
         /// Check if the property can be edit in worksheet. Only allow to edit simple properties.
         /// </summary>
@@ -273,8 +309,45 @@ namespace TMTech.Shared.SpreadSheetGear
         }
 
 
+        /// <summary>
+        /// Get double value from specified cell in worksheet.
+        /// </summary>
+        /// <param name="sheet"></param>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public static double? GetDouble(IWorksheet sheet, string address)
+        {
+            object value = sheet.Range[address].Value;
 
-    
+            if (value == null)
+                return null;
+
+            string svalue = value.ToString();
+
+            double result;
+            if (double.TryParse(svalue, out result))
+            {
+                return result;
+            }
+
+
+            if (double.TryParse(svalue.Substring(0, svalue.Length - 1), out result))
+            {
+                if (svalue.EndsWith("m", StringComparison.OrdinalIgnoreCase))
+                    return result * 1000000;
+                else if (svalue.EndsWith("k", StringComparison.OrdinalIgnoreCase))
+                    return result * 1000;
+                else if (svalue.EndsWith("%", StringComparison.OrdinalIgnoreCase))
+                    return result * 0.01;
+                else if (svalue.EndsWith("b", StringComparison.OrdinalIgnoreCase))
+                    return result * 1000000000;
+            }
+
+            return null;
+        }
+
+
+
     }
 
     
