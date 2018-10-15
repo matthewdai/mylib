@@ -2,41 +2,51 @@
 <html lang="en" class="no-js">
 
 <style type="text/css">
-    .auth-user {
-        width: 600px;
-        background-color: antiquewhite;
-        padding: 15px;
-        border-style: solid;
-        border-color: blueviolet;
-    }
-
-    .auth-user-name {
-        display:flex;
+    .flex-container {
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: nowrap;
+        background: darkgoldenrod;
         justify-content: space-between;
     }
 
-    .msg {
-        display:flex;
-        justify-content: flex-end;
+    .flex-container > div {
+        background: #a0a0a0;
+        /* min-width: 100px; */
+        margin: 5px;
+        text-align: center;
+        line-height: 75px;
+        /* flex: 1; */
     }
+
+     .flex-container label {
+        background: #a0a0a0;
+        color: purple;
+        width: 100px;
+        text-align: center;
+        font-size: 30px
+    }
+
+
 
 </style>
 
 <body>
 
-<div class="auth-user">
-    <div class="auth-user-name">
-        <div class="item">
-            Label 1
-        </div>
-        <div class="item">
-            Label 2
-        </div>
+<div class="flex-container">
+    <div>
+        <label>TMR</label>
+        <div>1</div>
     </div>
-    <div class="msg">
-        <label>Status</label> 
+    <div style="flex-shrink: 4">
+        <label>TMR</label>
+        <div>1</div>
     </div>
-            
+    <div>
+        <label>TMR</label>
+        <div>1</div>
+    </div>
+    
 </div>        
 </body>
 </html>
