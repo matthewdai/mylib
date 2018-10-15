@@ -1,4 +1,5 @@
 ﻿using SpreadsheetGear;
+using SpreadsheetGear.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -423,6 +424,68 @@ namespace SpreadSheetGearCommandDemo
 
 
             
+        }
+
+        private void AddCheckbox_Click(object sender, RoutedEventArgs e)
+        {
+            wbview.GetLock();
+            AddCheckBox(4, 3);
+            wbview.ReleaseLock();
+
+        }
+
+
+        protected IShape AddCheckBox(int row, int col, HAlign align = HAlign.Left)
+        {
+
+            var sheet = this.wbview.ActiveWorksheet;
+            var cell = sheet.Cells[row, col];
+            cell.Interior.Color = SpreadsheetGear.Colors.Azure;
+            cell.Value = "adsfas";
+            //Add check box in sheet
+            //Get a reference to the active worksheet and worksheet window info.
+            var windowInfo = sheet.WindowInfo;
+
+            double drow = row;
+            double dcol = col;
+
+            // Calculate the left, top, width and height of the checkbox by 
+            //converting row and column coordinates to points.  Use fractional 
+            //  values to get coordinates in between row and column boundaries.
+            double left = windowInfo.ColumnToPoints(dcol + 0.0);
+            double top = windowInfo.RowToPoints(drow + 0.0);
+            double right = windowInfo.ColumnToPoints(dcol + 1);
+            double bottom = windowInfo.RowToPoints(drow + 1);
+            double width = right - left;
+            double height = bottom - top;
+
+            //double left = windowInfo.ColumnToPoints(1.1);
+            //double top = windowInfo.RowToPoints(1.1);
+            //double right = windowInfo.ColumnToPoints(3.9);
+            //double bottom = windowInfo.RowToPoints(2.9);
+            //double width = right - left;
+            //double height = bottom - top;
+
+            //Add the checkbox using the calculated bounds.
+            var shape = sheet.Shapes.AddFormControl(FormControlType.CheckBox, left, top, width, height);
+            shape.TextFrame.
+
+
+            // get linked cell which will be linked to a visiable cell and a check box
+            //var linkedCell = sheet.Cells[row, col + 5];
+            //cell.Formula = "=" + linkedCell.Address;
+            //cell.Locked = true;     // lock this cell
+            cell.Font.Color = SpreadsheetGear.Colors.White;
+
+            // Link the checkbox to linked cell.
+            //shape.ControlFormat.LinkedCell = linkedCell.Address;
+
+            //Set the text of the checkbox.
+            shape.TextFrame.Characters.Text = null;
+
+            sheet.Cells[0, 0].Value = sheet.Shapes.Count;
+
+            return shape;
         }
     }
 
