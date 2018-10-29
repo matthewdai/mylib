@@ -148,7 +148,7 @@
 
 
         <Style x:Key="custom_workbookview_style" x:Name="ddd" TargetType="sg:WorkbookView">
-            <Setter Property="ColumnHeaderStyle" Value="{StaticResource MyCustomColumnHeaderStyle}" />
+            <!--<Setter Property="ColumnHeaderStyle" Value="{StaticResource MyCustomColumnHeaderStyle}" />
             <Setter Property="RowHeaderStyle" Value="{StaticResource MyCustomRowHeaderStyle}" />
             <Setter Property="GridlineBrush" Value="Transparent" />
             <Setter Property="BorderBrush" Value="LightGray" />
@@ -157,13 +157,17 @@
 
             <Setter Property="RangeSelectionBorderBrush" Value="Orange" />
             <Setter Property="RangeSelectionBrush" Value="Black" />
-            <Setter Property="RowColumnResizerBrush" Value="Red" />
+            <Setter Property="RowColumnResizerBrush" Value="Red" />-->
             <!--<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />-->
         </Style>
     </Window.Resources>
     
     
     <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Add Checkbox" Click="AddCheckbox_Click"/>
+        </Menu>
+        
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
                 <ToggleButton IsChecked="{Binding Bold, Mode=OneWay}" Command="spgcmds:SpreadSheetCommands.Bold">Bold</ToggleButton>
