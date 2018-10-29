@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BlendIcons.Icons
+namespace Blend_2013
 {
     /// <summary>
-    /// Interaction logic for DataGridPath.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class ReportPath : UserControl
+    public partial class MainWindow : Window
     {
-        public ReportPath()
+        public MainWindow()
         {
             InitializeComponent();
         }

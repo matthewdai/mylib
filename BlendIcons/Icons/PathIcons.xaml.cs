@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BlendIcons.Icons
 {
     /// <summary>
-    /// Interaction logic for Conflict.xaml
+    /// Interaction logic for PathIcons.xaml
     /// </summary>
-    public partial class Conflict : UserControl
+    public partial class PathIcons : UserControl
     {
-        public Conflict()
+        public PathIcons()
         {
             InitializeComponent();
         }
