@@ -37,7 +37,10 @@ namespace Tools.WordProcess.Windows
                 for (int i = StartFile; i <= EndFile; i++)
                 {
                     var filename = Folder + @"\" + i + ExtensionString;
-                    text.Append(System.IO.File.ReadAllText(filename));
+                    if (System.IO.File.Exists(filename))
+                    {
+                        text.Append(System.IO.File.ReadAllText(filename));
+                    }
                 }
 
                 return text.ToString();
@@ -62,6 +65,7 @@ namespace Tools.WordProcess.Windows
         {
             this.DialogResult = true;
             Text = mVieModel.Import();
+            MessageBox.Show("Importing completed.");
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
