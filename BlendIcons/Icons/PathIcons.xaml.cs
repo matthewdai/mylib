@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BlendIcons.Icons
 {
     /// <summary>
-    /// Interaction logic for DataGridPath.xaml
+    /// Interaction logic for PathIcons.xaml
     /// </summary>
-    public partial class DataGridPath : UserControl
+    public partial class PathIcons : UserControl
     {
-        public DataGridPath()
+        public PathIcons()
         {
             InitializeComponent();
         }
