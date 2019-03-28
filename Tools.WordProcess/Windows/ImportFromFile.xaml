@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tools.WordProcess.Windows"
+        xmlns:thisApp="clr-namespace:Tools.WordProcess"
+        xmlns:converters="clr-namespace:TMTech.Shared.WPFLIB.Converters;assembly=TMTech.Shared.WPFLIB"
         mc:Ignorable="d" WindowStartupLocation="CenterOwner"
         Title="{Binding Filename}" Height="400" Width="600">
 
@@ -33,6 +35,9 @@
             <Setter Property="Margin" Value="0 0 5 0"/>
         </Style>
 
+        <converters:EnumToBoolConverter x:Key="enumToBoolConverter"/>
+
+
     </Window.Resources>
     
     <Grid Margin="10">
@@ -44,10 +49,10 @@
             <Label DockPanel.Dock="Top">Select the encoding that makes your document readable.</Label>
             <Label DockPanel.Dock="Top">Text encoding:</Label>
             <DockPanel DockPanel.Dock="Top" Margin="0 3">
-                <RadioButton DockPanel.Dock="Left">Windows (Default)</RadioButton>
-                <RadioButton DockPanel.Dock="Left">MS-DOS</RadioButton>
-                <RadioButton DockPanel.Dock="Left">Other encoding:</RadioButton>
-                <ListBox Height="100" ItemsSource="{Binding AllEncodings}" SelectedItem="{Binding SelectedEncoding}" DisplayMemberPath="DisplayName" />
+                <RadioButton DockPanel.Dock="Left" IsChecked="{Binding EncodingType, Converter={StaticResource enumToBoolConverter}, ConverterParameter={x:Static thisApp:EncodingType.WindowsDefault}}" >Windows (Default)</RadioButton>
+                <RadioButton DockPanel.Dock="Left" IsChecked="{Binding EncodingType, Converter={StaticResource enumToBoolConverter}, ConverterParameter={x:Static thisApp:EncodingType.MS_DOS}}" >MS-DOS</RadioButton>
+                <RadioButton x:Name="otherEncoding" DockPanel.Dock="Left" IsChecked="{Binding EncodingType, Converter={StaticResource enumToBoolConverter}, ConverterParameter={x:Static thisApp:EncodingType.OtherEncoding}}" >Other encoding:</RadioButton>
+                <ListBox Height="100" IsEnabled="{Binding IsChecked, ElementName=otherEncoding}" ItemsSource="{Binding AllEncodings}" SelectedItem="{Binding SelectedEncoding}" DisplayMemberPath="DisplayName" />
             </DockPanel>
             <Label DockPanel.Dock="Top">Preview:</Label>
             <TextBox Text="{Binding PreviewText}" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" IsReadOnly="True"/>

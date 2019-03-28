@@ -58,6 +58,7 @@
     <Compile Include="Controls\FlatToggleButton.cs" />
     <Compile Include="Converters\BoolInverseConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToBoolConverter.cs" />
     <Compile Include="Converters\ExcelHeaderConverters.cs" />
     <Compile Include="Converters\GeneralVisibilityConverter.cs" />
     <Compile Include="Extensions\EnumBindingSourceExtension.cs" />

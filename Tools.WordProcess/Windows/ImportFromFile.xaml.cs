@@ -1,18 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TMTech.Shared.WPFLIB.ViewModels;
 
 namespace Tools.WordProcess.Windows
@@ -85,15 +75,7 @@ namespace Tools.WordProcess.Windows
 
             public void PreviewFile()
             {
-                StreamReader reader;
-                if (this.SelectedEncoding == null)
-                {
-                    reader = new StreamReader(this.Filename, Encoding.Default);
-                }
-                else
-                {
-                    reader = new StreamReader(this.Filename, this.SelectedEncoding.GetEncoding());
-                }
+                var reader = new StreamReader(this.Filename, this.GetSelectedEncoding());
 
                 int lines = 0;
                 string text = string.Empty;
@@ -112,7 +94,16 @@ namespace Tools.WordProcess.Windows
             /// <returns></returns>
             public string Process()
             {
-                return File.ReadAllText(this.Filename, this.SelectedEncoding.GetEncoding());
+                return File.ReadAllText(this.Filename, this.GetSelectedEncoding());
+            }
+
+            private Encoding GetSelectedEncoding()
+            {
+                if (this.EncodingType == EncodingType.OtherEncoding && this.SelectedEncoding != null)
+                {
+                    return this.SelectedEncoding.GetEncoding();
+                }
+                return Encoding.Default;
             }
         }
 
