@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,8 +70,22 @@ namespace Tools.WordProcess
             {
                 this.textSource.Text = win.Text;
             }
+        }
 
-
+        private void ProcessSingleFile_Click(object sender, RoutedEventArgs e)
+        {
+            var dlg = new OpenFileDialog();
+            var result = dlg.ShowDialog();
+            if (result == true)
+            {
+                var filename = dlg.FileName;
+                if (System.IO.File.Exists(filename))
+                {
+                    var win = new Windows.ImportFromFile(filename);
+                    win.Owner = this;
+                    win.ShowDialog();
+                }
+            }
         }
     }
 }

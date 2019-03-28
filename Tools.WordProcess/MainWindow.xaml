@@ -8,14 +8,15 @@
         Title="Word Process" Height="600" Width="800" WindowStartupLocation="CenterScreen">
 
     <DockPanel>
-            <ToolBar DockPanel.Dock="Top">
-                <Button Click="ImportFiles_Click">Import</Button>
-                <Button Click="Process_Click">Process</Button>
-                <Button Click="Clear_Click">Clear</Button>
-                <Separator />
-                <TextBox x:Name="textUrl" MinWidth="100"></TextBox>
-                <Button Click="GetUrl_Click">Get URL</Button>
-            </ToolBar>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="ImportFiles_Click">Import</Button>
+            <Button Click="Process_Click">Process</Button>
+            <Button Click="Clear_Click">Clear</Button>
+            <Button Click="ProcessSingleFile_Click">Process Single File</Button>
+            <Separator />
+            <TextBox x:Name="textUrl" MinWidth="100"></TextBox>
+            <Button Click="GetUrl_Click">Get URL</Button>
+        </ToolBar>
                 
         <Grid>
             <Grid.ColumnDefinitions>
