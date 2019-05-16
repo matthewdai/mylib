@@ -58,10 +58,12 @@
     <Compile Include="Controls\FlatToggleButton.cs" />
     <Compile Include="Converters\BoolInverseConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToBoolConverter.cs" />
     <Compile Include="Converters\ExcelHeaderConverters.cs" />
     <Compile Include="Converters\GeneralVisibilityConverter.cs" />
     <Compile Include="Extensions\EnumBindingSourceExtension.cs" />
     <Compile Include="ScreenHandler.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Page Include="Themes\Basic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
