@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
-  template:
-    `<h1>{{title}}</h1>
-    <products></products>`,
-  providers: [ProductService]
+  template:`
+    <rating></rating>
+    `,
 })
 export class AppComponent {
-  title = 'Hello, Angular!  Using template';
+  title = "hello";
+
+  onClick($event) {
+    this.title = $event;
+  }
 }

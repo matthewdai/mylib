@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products.component';
+import { RatingComponent } from './rating.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent],
+    AppComponent, ProductsComponent, RatingComponent],
   imports: [
     BrowserModule,
     FormsModule,
