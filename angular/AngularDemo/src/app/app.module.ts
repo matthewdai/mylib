@@ -6,15 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products.component';
 import { RatingComponent } from './rating.component';
+import { TryoutComponent } from './tryout.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent, RatingComponent],
+    AppComponent, ProductsComponent, RatingComponent, TryoutComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, TryoutComponent]
 })
 export class AppModule { }
