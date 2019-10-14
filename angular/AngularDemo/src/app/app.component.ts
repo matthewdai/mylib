@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template:`
-    <rating></rating>
-    `,
+  templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  title = "hello";
+  title = "Hello, world.";
 
-  onClick($event) {
-    this.title = $event;
-  }
+  // onClick($event) {
+  //   this.title = $event;
+  // }
 }
