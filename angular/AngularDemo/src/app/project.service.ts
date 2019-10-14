@@ -1,6 +1,6 @@
 export class ProjectService {
-    
+
     getProjects() : string[] {
-        return ["Learning Angular 2", "Pro typeScript", "ASP.NET"];
+        return ["Learning Angular 2", "Pro typeScript", "ASP.NET", "Pro MVC 5"];
     }
 }

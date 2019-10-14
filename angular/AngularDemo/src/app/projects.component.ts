@@ -10,7 +10,8 @@ export class ProjectsComponent {
   projects;
 
   getProjects() : string[] {
-        return ["Learning Angular 2", "Pro typeScript", "ASP.NET"];
+        return ["Angularjj", "Pro typeScript", "ASP.NET"];
+        //return ["Learning Angular 2", "Pro typeScript", "ASP.NET"];
   }
 
   constructor( ps : ProjectService) {

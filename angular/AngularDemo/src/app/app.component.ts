@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  title = "Project Name";
+  title = "TMHCC Application";
 
   // onClick($event) {
   //   this.title = $event;

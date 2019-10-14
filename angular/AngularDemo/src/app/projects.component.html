@@ -1,8 +1,13 @@
 <h2>Projects</h2>
 
-<ul>
-    <li *ngFor="let project of projects">
-        {{project}}
-    </li>
-</ul>
+<div class="row" *ngIf="projects.length > 0">
+    <div *ngFor="let item of projects" class="project col-md-6">
+        <project [projectName]="item"></project>
+    </div>
+</div>
+
+<div *ngIf="projects.length == 0">
+   No projects to display
+</div>
+
           
