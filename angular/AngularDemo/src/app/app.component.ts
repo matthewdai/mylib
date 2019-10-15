@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = "TMHCC Application";
-
+  today = new Date();
   // onClick($event) {
   //   this.title = $event;
   // }
