@@ -8,7 +8,7 @@ import { User } from './user';
 
 export class UserFormComponent {
     countries = ['United States', 'Singapore', 'Hong Kong', 'Australia', 'China'];
-    model = new User('abc Dai', 'abc@hotmail.com', 'China');
+    model = new User('', '', '');
     submitted = false;
 
     onSubmit() {
