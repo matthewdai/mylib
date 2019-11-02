@@ -9,12 +9,7 @@ import { ProjectService } from './project.service';
 export class ProjectsComponent {
   projects;
 
-  getProjects() : string[] {
-        return ["Angularjj", "Pro typeScript", "ASP.NET"];
-        //return ["Learning Angular 2", "Pro typeScript", "ASP.NET"];
-  }
-
-  constructor( ps : ProjectService) {
+  constructor(ps : ProjectService) {
     this.projects = ps.getProjects();
   }
 
