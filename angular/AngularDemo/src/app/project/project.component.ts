@@ -6,5 +6,11 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ProjectComponent {
-    @Input() projectName : string;
+    @Input() project : Project;
+}
+
+
+class Project {
+    name: string;
+    author: string;
 }

@@ -1,6 +1,11 @@
 export class ProjectService {
 
-    getProjects() : string[] {
-        return ["Learning Angular 2", "Pro typeScript", "ASP.NET", "Pro MVC 5"];
+    getProjects(){
+        return [
+            {name:"Learning Angular 2", author:"Matthew, Dai"}, 
+            {name:"Pro typeScript", author:"Cindy, Xie"}, 
+            {name:"ASP.NET", author:"Ronger, Dai"}, 
+            {name:"Pro MVC 5", author:"Zheliang, Liu"}
+        ];
     }
 }
