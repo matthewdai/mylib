@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -13,18 +13,23 @@ import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { TestComponent } from './test/test.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: StartComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
-      { path: 'testing', component: TestComponent }
+      { path: 'testing', component: TestComponent },
+      { path: 'projects', component: ProjectListComponent }
     ])
   ],
   declarations: [
@@ -35,7 +40,10 @@ import { TestComponent } from './test/test.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    TestComponent
+    TestComponent,
+    ProjectListComponent,
+    NavbarComponent,
+    StartComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService]

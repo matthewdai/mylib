@@ -24,9 +24,42 @@
 
 <h1>Example 1-6 Navigation Style</h1>
 
-    <ul class="nav nav-pills"> 
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Project</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Help</a></li>
-    </ul>
+<nav class="nav nav-pills nav-stacked"> 
+    <a class="nav-link active" href="#">Home</a>
+    <a class="nav-link" href="#">Project</a>
+    <a class="nav-link" href="#">Settings</a>
+    <a class="nav-link" href="#">Help</a>
+</nav>
+
+<div class="container">
+    <!-- <div class="page-header">
+        <h2>Chapter 1 <small>Hello, World</small></h2>
+    </div> -->
+    <div class="jumbotron">
+        <h1>Hello, {{ name || 'World'}}</h1>
+        <input type="text" [(ngModel)]="name" class="form-control form-contraol-sm">
+        <h1>Hello, {{ name || 'World'}}</h1>
+    </div>   
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>FRESH ORGANIC MARKET</h1>
+        <p class="lead">Nice chance to save a lot of money</p>
+        <hr class="m-y-2">
+        <p>We are open 7 days a week 7:00am to 10:00pm</p>
+        <p>The Ubuntu is <abbr>OS</abbr>.</p>
+    </div>      
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <address>
+        <strong>Contact Info</strong><br>
+        1200 Market St, Suite 100, San Francisco, CA 96009,
+        (123) 456-7890, <a href="mailto:#">support@dream-bean.com</a>
+        </address>
+    </div>
+</footer>
+          
+    
