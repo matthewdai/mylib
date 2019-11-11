@@ -9,13 +9,16 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { TestComponent } from './test/test.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StartComponent } from './start/start.component';
+import { ProjectComponent } from './project-list/project/project.component';
+
+import { CartService } from './cart.service';
+import { ProjectService } from './project.service';
 
 @NgModule({
   imports: [
@@ -29,7 +32,8 @@ import { StartComponent } from './start/start.component';
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'testing', component: TestComponent },
-      { path: 'projects', component: ProjectListComponent }
+      { path: 'projects', component: ProjectListComponent },
+      { path: 'project/:projectId', component: ProjectComponent },
     ])
   ],
   declarations: [
@@ -43,10 +47,11 @@ import { StartComponent } from './start/start.component';
     TestComponent,
     ProjectListComponent,
     NavbarComponent,
-    StartComponent
+    StartComponent,
+    ProjectComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService]
+  providers: [CartService, ProjectService]
 })
 export class AppModule { }
 

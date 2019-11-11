@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { NodeCompatibleEventEmitter } from 'rxjs/internal/observable/fromEvent';
 
-export interface NavItem {
-  // navigation link
-  href: string;
-  // navigation label
-  label: string;
-  // status
-  active: boolean;
-}
+import { NavItem } from '../shared/nav-item';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
   // app name
   appName: string = "Peachtree";
+  
   // navigation items
   navItems: NavItem[] = [
     {href: '#', label: 'Home', active: true},
@@ -26,7 +22,8 @@ export class NavbarComponent implements OnInit {
     {href: '#', label: 'Sign out', active: false}
 ];
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }

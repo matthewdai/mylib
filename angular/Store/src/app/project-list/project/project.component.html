@@ -1,0 +1,29 @@
+<h1>{{ project.name }}</h1>
+
+<nav class="nav nav-tabs"> 
+    <a class="nav-link" [class.active]="currentTab=='datasets'" [routerLink]="" (click)="currentTab='datasets'">Datesets</a>
+    <a class="nav-link" [class.active]="currentTab=='fields'" [routerLink]="" (click)="currentTab='fields'">Fields</a>
+    <a class="nav-link" [class.active]="currentTab=='analysis'" [routerLink]="" (click)="currentTab='analysis'">Analysis</a>
+    <a class="nav-link" [class.active]="currentTab=='validation'" [routerLink]="" (click)="currentTab='validation'">Analysis</a>
+    <a class="nav-link" [class.active]="currentTab=='models'" [routerLink]="" (click)="currentTab='models'">Analysis</a>
+</nav>
+
+<div *ngIf="currentTab=='datasets'">
+    <p>Show datasets tab.</p>
+</div>
+
+<div *ngIf="currentTab=='fields'">
+    <p>Show fields tab.</p>
+</div>
+
+<div *ngIf="currentTab=='analysis'">
+    <p>Show analysis tab.</p>
+</div>
+
+<div *ngIf="currentTab=='validation'">
+    <p>Show validation tab.</p>
+</div>
+
+<div *ngIf="currentTab=='models'">
+    <p>Show models tab.</p>
+</div>
