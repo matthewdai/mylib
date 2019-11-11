@@ -19,6 +19,7 @@ import { ProjectComponent } from './project-list/project/project.component';
 
 import { CartService } from './cart.service';
 import { ProjectService } from './project.service';
+import { DatasetListComponent } from './project-list/project/dataset-list/dataset-list.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { ProjectService } from './project.service';
     ProjectListComponent,
     NavbarComponent,
     StartComponent,
-    ProjectComponent
+    ProjectComponent,
+    DatasetListComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]

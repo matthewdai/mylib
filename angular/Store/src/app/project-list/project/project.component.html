@@ -8,9 +8,7 @@
     <a class="nav-link" [class.active]="currentTab=='models'" [routerLink]="" (click)="currentTab='models'">Analysis</a>
 </nav>
 
-<div *ngIf="currentTab=='datasets'">
-    <p>Show datasets tab.</p>
-</div>
+<app-dataset-list *ngIf="currentTab=='datasets'"></app-dataset-list>
 
 <div *ngIf="currentTab=='fields'">
     <p>Show fields tab.</p>
