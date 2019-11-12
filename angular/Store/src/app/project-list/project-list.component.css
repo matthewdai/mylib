@@ -21,3 +21,11 @@ th {
     justify-content: space-between;
     align-items: center;
 }
+
+.material-icons {
+    color: #999;    
+}
+
+.material-icons:hover {
+  color: #1976d2;
+}
