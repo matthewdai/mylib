@@ -10,6 +10,7 @@ import { Project } from '../shared/project';
 })
 export class ProjectListComponent implements OnInit {
   closeResult: string;
+  display='nont';
 
   projects: Project[] = [
     {id:1, name: "Project 1", owner: "John", dateCreated:new Date("1/1/2019"), detail: false}, 
@@ -39,6 +40,15 @@ export class ProjectListComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
+  }
+
+  openModal() {
+    window.alert("About to open modal!");
+    this.display='block';
+  }
+
+  onCloseHandled() {
+    this.display = 'none';
   }
 
 }
