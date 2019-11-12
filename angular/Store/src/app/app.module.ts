@@ -20,6 +20,7 @@ import { ProjectComponent } from './project-list/project/project.component';
 import { CartService } from './cart.service';
 import { ProjectService } from './project.service';
 import { DatasetListComponent } from './project-list/project/dataset-list/dataset-list.component';
+import { ProjectRowComponent } from './project-list/project-row/project-row.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { DatasetListComponent } from './project-list/project/dataset-list/datase
     NavbarComponent,
     StartComponent,
     ProjectComponent,
-    DatasetListComponent
+    DatasetListComponent,
+    ProjectRowComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
