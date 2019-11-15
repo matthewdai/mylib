@@ -1,0 +1,26 @@
+<div class='container'>
+    <h1>User Form</h1>
+    <form>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email" #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <!--<input type="text" class="form-control" id="country">-->
+            <select class="form-control" id="country" [(ngModel)]="model.country" name="country">
+                <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,75 @@
+.background-div {
+    background:url("/assets/images/heading2.jpg") no-repeat; width:250px; height:76px;
+}
+
+*.positioned { 
+    position: relative; 
+    border-color: #dddddd;
+    border-width: 1px;
+    border-style: solid;
+    height: 50px;
+ }
+*.absolute { 
+    position:absolute; 
+    top:10px; 
+    left:10px;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+}
+
+#h2 {
+    position: relative;
+    width: 250px;
+    height: 76px;
+    overflow: hidden;
+    border-color: #dddddd;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#h2 span {
+    position:absolute; 
+    top:0px; 
+    left:0px;
+    width:250px; height:76px;
+    background:url("/assets/images/heading2.jpg") no-repeat;
+}
+
+.left-marginal {
+    position: relative; 
+    /* border-color: #dddddd;
+    border-width: 1px;
+    border-style: solid;
+    height: 100px; */
+    margin-left: 200px;
+}
+
+.marginal-heading {
+    position:absolute; 
+    top:0; 
+    margin: 0;
+    left: -200px;
+}
+
+*.indent { position: relative; margin-left:120px; width: 300px; }
+*.graphic-dropcap {
+    position: absolute;
+    width: 120px;
+    height: 90px;
+    left: -120px;
+    top: 0;
+}
+
+*.graphic-dropcap span{
+    position: absolute;
+    width: 120px;
+    height: 90px;
+    left: 0px;
+    top: 0;
+    background:url("/assets/images/m.jpg") no-repeat;
+}
+
+.search-box {
+    height: 25px;
+}

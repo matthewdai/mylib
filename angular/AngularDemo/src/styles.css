@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.col1 {
+    background: red;
+}
+
+.col2 {
+    background: cadetblue;
+}
+
+.project {
+    background: lightcyan;
+}

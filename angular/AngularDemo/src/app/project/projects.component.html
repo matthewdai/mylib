@@ -1,0 +1,19 @@
+<h2>Projects</h2>
+
+<!--Don't know why, if don't put the following line here, the the first item always display blank string in *ngIf.
+    looks like the first instance of the project display blank.
+ -->
+<project></project>
+<!--*********************************************************************************************************************-->
+
+<div class="row" *ngIf="projects.length > 0">
+    <div *ngFor="let item of projects" class="project col-md-6">
+        <project [project]=item></project>
+    </div>
+</div>
+
+<div *ngIf="projects.length == 0">
+   No projects to display
+</div>
+
+          
