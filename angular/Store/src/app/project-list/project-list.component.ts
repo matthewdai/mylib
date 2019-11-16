@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { Project } from '../shared/project';
 
 @Component({
@@ -43,8 +44,8 @@ export class ProjectListComponent implements OnInit {
   }
 
   openModal() {
-    window.alert("About to open modal!");
-    this.display='block';
+    //window.alert("About to open modal!");
+    //this.display='block';
   }
 
   onCloseHandled() {
