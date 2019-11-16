@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
 })
+
 export class AppComponent {
-  title = "TMHCC Application";
-  today = new Date();
+  // title = "TMHCC Peachtree Application";
+  // today = new Date();
   // onClick($event) {
   //   this.title = $event;
   // }
 }
+
