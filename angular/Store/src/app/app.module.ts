@@ -20,6 +20,7 @@ import { ProjectComponent } from './project-list/project/project.component';
 import { CartService } from './cart.service';
 import { ProjectService } from './project.service';
 import { DatasetListComponent } from './project-list/project/dataset-list/dataset-list.component';
+import { ProjectEditComponent } from './project-list/project-edit/project-edit.component';
 
 @NgModule({
   imports: [
@@ -51,15 +52,10 @@ import { DatasetListComponent } from './project-list/project/dataset-list/datase
     StartComponent,
     ProjectComponent,
     DatasetListComponent,
+    ProjectEditComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
 })
 export class AppModule { }
 
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -6,7 +6,7 @@
 </div>
 
 <div>
-    <table class="table table-inverse table-reflow table-striped table-sm">
+    <table class="table">
         <thead>
           <tr>
             <th></th>
@@ -29,13 +29,15 @@
       
         <tbody>
           <ng-container *ngFor = "let project of projects">
-              <tr>
-                  <td><input type="checkbox" [(ngModel)]="project.detail"></td>
+              <tr class="odd">
+                  <td>
+                    <!-- <input type="checkbox" [(ngModel)]="project.detail"><i class="medium material-icons">add_circle_outline</i> -->
+                  </td>
                   <td>{{ project.id }}</td>
                   <td>{{ project.group }}</td>
                   <td>{{ project.team }}</td>
                   <td>
-                    <a [routerLink]="['/project', project.id]">{{ project.name }}</a>
+                    <!-- <a [routerLink]="['/project', project.id]">{{ project.name }}</a> -->
                   </td>
                   <td>{{ project.status }}</td>
                   <td>{{ project.owner }}</td>
@@ -46,10 +48,10 @@
                   <td></td>
                   <td></td>
                   <td>
-                    <a [routerLink]="" title="Edit"><i class="medium material-icons">mode_edit</i></a>
+                    <!-- <a [routerLink]="" title="Edit"><i class="medium material-icons">mode_edit</i></a> -->
                   </td>
                   <td>
-                      <a [routerLink]="" title="Delete"><i class="medium material-icons">delete</i></a>
+                      <a [routerLink]="" title="Delete"><i class="material-icons md-24">delete</i></a>
                     </td>
               </tr>   
               <tr *ngIf="project.detail">
@@ -61,39 +63,5 @@
       </table>
 </div>
 
+<app-project-edit></app-project-edit>
 
-<div class="modal" id="projectModal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">New Project</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>                
-            </div>
-            <div class="modal-body">
-              <form>
-                  <div class="form-group">
-                      <label for="project-name" class="small">Project Name:</label>
-                      <input type="text" class="form-control" id="project-name">
-                  </div>
-                  <div class="form-group">
-                      <label for="group" class="small">Group:</label>
-                      <input type="text" class="form-control" id="group">
-                  </div>
-                  <div class="form-group">
-                      <label for="team" class="small">Team:</label>
-                      <input type="text" class="form-control" id="Team">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="description" class="small">Description:</label>
-                    <textarea class="form-control" id="description"></textarea>
-                  </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
-        </div>
-    </div>
-</div>
