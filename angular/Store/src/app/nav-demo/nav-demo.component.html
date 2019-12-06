@@ -1,0 +1,57 @@
+<h1>Navigations</h1>
+
+<div class="row">
+  <div class="col-md-6">
+      <div><h2>Inline</h2></div>
+      <div>
+          <ul class="nav nav-inline">
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./']">Start</a></li>
+              <li class="nav-item"><a class="nav-link active" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a></li>
+          </ul>  
+      </div>
+  </div>
+
+  <div class="col-md-6">
+      <div><h2>Tabs</h2></div>
+      <div>
+          <ul class="nav nav-tabs">
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./']">Start</a></li>
+              <li class="nav-item"><a class="nav-link active" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a></li>
+          </ul>  </div>
+    </div>
+
+    <div class="col-md-6">
+        <div><h2>Pills</h2></div>
+        <div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./']">Start</a></li>
+                <li class="nav-item"><a class="nav-link active" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a></li>
+            </ul>  
+        </div>
+    </div>  
+    
+    <div class="col-md-6">
+        <div><h2>Stacked Pills</h2> <small><strong>nav-stacked</strong> is deprecated in Bootstrap 4.</small></div>
+        <div>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link active" href="#">Start</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shipping</a></li>
+                <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a></li>
+            </ul>  
+        </div>
+    </div>      
+</div>
+
