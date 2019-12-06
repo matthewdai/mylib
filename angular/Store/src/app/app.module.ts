@@ -21,6 +21,8 @@ import { CartService } from './cart.service';
 import { ProjectService } from './project.service';
 import { DatasetListComponent } from './project-list/project/dataset-list/dataset-list.component';
 import { ProjectEditComponent } from './project-list/project-edit/project-edit.component';
+import { NavDemoComponent } from './nav-demo/nav-demo.component';
+import { SelectStyleComponent } from './select-style/select-style.component';
 
 @NgModule({
   imports: [
@@ -36,6 +38,8 @@ import { ProjectEditComponent } from './project-list/project-edit/project-edit.c
       { path: 'testing', component: TestComponent },
       { path: 'projects', component: ProjectListComponent },
       { path: 'project/:projectId', component: ProjectComponent },
+      { path: 'navdemo', component: NavDemoComponent },
+      { path: 'selectstyle', component: SelectStyleComponent },
     ])
   ],
   declarations: [
@@ -53,6 +57,8 @@ import { ProjectEditComponent } from './project-list/project-edit/project-edit.c
     ProjectComponent,
     DatasetListComponent,
     ProjectEditComponent,
+    NavDemoComponent,
+    SelectStyleComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]

@@ -1,0 +1,18 @@
+.menu-bar {
+    background-color: #666;
+    padding: 0px;
+}
+
+nav {
+    /* background-color: transparent; */
+    padding: 0px;
+}
+
+nav .nav-link {
+    padding: 2px 16px;
+    /* color: #eeeeee; */
+}
+
+/* nav .nav-link :hover {
+    color: #ffffff;
+} */

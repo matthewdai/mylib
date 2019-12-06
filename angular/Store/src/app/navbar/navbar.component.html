@@ -1,40 +1,51 @@
-<!-- <div class="container">
-    <nav class="navbar navbar-light bg-faded" role="navigation">
-        <a class="navbar-brand active" href="#">
-            Start <span class="sr-only">(current)</span>
-          </a>
-              <a class="nav-item nav-link active" [routerLink]="['/projects']">Project</a>
-              <a class="nav-item nav-link" [routerLink]="['/cart']">Cart</a>
-              <a class="nav-item nav-link" href="#">Settings</a>
-              <a class="nav-item nav-link" [routerLink]="['/testing']">Test</a>
-    </nav>
+<!-- 
+<div class="container">
+        <ul class="navbar navbar-nav" role="navigation">
+            <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a></li>
+            <li class="nav-item"><a class="nav-link disabled" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Save</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Start</a>
+                  <a class="dropdown-item" href="#">Cart</a>
+                  <a class="dropdown-item" href="#">Shipping</a>
+                  <a class="dropdown-item" href="#">Testing</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Projects</a>
+              </div>
+            </li>
+        </ul>
 </div> -->
 
-<div class="container">
-    <nav class="nav nav-tabs" role="navigation">
-      <a class="nav-link" [class.active]="item.active" *ngFor = "let item of navItems" [href]="item.href">{{item.label}}</a>
-    </nav>
-    <!-- <nav class="navbar navbar-light bg-faded" role="navigation">
-        <a *ngFor = "let item of navItems" [href]="item.href">{{item.label}}</a>
-      </nav> -->
-</div>
 
 
-<!-- 
-<ul class="nav nav-tabs"> 
-  <li class="nav-item"><a class="nav-link active" href="#">Start</a></li>
-  <li class="nav-item"><a class="nav-link" [routerLink]="['/projects']">Project</a></li>
-  <li class="nav-item"><a class="nav-link" [routerLink]="['/cart']">Cart</a></li>  
-  <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-  <li class="nav-item"><a class="nav-link" [routerLink]="['/testing']">Test</a></li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" [routerLink]="['/testing']" 
-    role="button" aria-haspopup="true" aria-expanded="false">Actions</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item">New Project</a>
-      <a class="dropdown-item">New Model</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item">New Dataset</a>
+<div class="menu-bar">
+    <div class="container menu-bar">
+        <nav class="navbar navbar-dark bg-faded">
+            <a class="nav-link navbar-brand" href="#">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./testing']">Testing</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a>
+            <a class="nav-link disabled" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Save</a>
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Start</a>
+                    <a class="dropdown-item" href="#">Cart</a>
+                    <a class="dropdown-item" href="#">Shipping</a>
+                    <a class="dropdown-item" href="#">Testing</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Projects</a>
+                </div>
+            </div>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./selectstyle']">Select Styling</a>
+        </nav>
     </div>
-  </li>
-</ul> -->
+</div>
