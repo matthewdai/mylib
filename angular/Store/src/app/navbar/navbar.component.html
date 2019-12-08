@@ -26,7 +26,7 @@
 
 <div class="menu-bar">
     <div class="container menu-bar">
-        <nav class="navbar navbar-dark bg-faded">
+        <nav class="navbar navbar-light" style="background-color:#ccc;">
             <a class="nav-link navbar-brand" href="#">Home<span class="sr-only">(current)</span></a>
             <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./cart']">Cart</a>
             <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./shipping']">Shipping</a>
@@ -34,6 +34,7 @@
             <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./projects']">Projects</a>
             <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Nav</a>
             <a class="nav-link disabled" [routerLinkActive]="['active']" [routerLink]="['./navdemo']">Save</a>
+            <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./tabledemo']">Table</a>
             <div class="dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu">
@@ -42,7 +43,8 @@
                     <a class="dropdown-item" href="#">Shipping</a>
                     <a class="dropdown-item" href="#">Testing</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Projects</a>
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./carousel']">Carousel</a>
+                    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./cards']">Cards</a>
                 </div>
             </div>
             <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./selectstyle']">Select Styling</a>
