@@ -23,6 +23,7 @@ import { DatasetListComponent } from './project-list/project/dataset-list/datase
 import { ProjectEditComponent } from './project-list/project-edit/project-edit.component';
 import { NavDemoComponent } from './nav-demo/nav-demo.component';
 import { SelectStyleComponent } from './select-style/select-style.component';
+import { ListDemoComponent } from './list-demo/list-demo.component';
 
 @NgModule({
   imports: [
@@ -59,6 +60,7 @@ import { SelectStyleComponent } from './select-style/select-style.component';
     ProjectEditComponent,
     NavDemoComponent,
     SelectStyleComponent,
+    ListDemoComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
