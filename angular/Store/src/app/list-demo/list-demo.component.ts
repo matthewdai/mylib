@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-list-demo',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDemoComponent implements OnInit {
 
-  constructor() { }
+  items;
+  
+  constructor(
+    private cartService: CartService
+  ) { }
 
+  
   ngOnInit() {
+    this.items = this.cartService.getShippingPrices();
   }
 
+
 }
+

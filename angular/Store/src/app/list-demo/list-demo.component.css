@@ -1,0 +1,11 @@
+
+
+.row dt {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.row dd {
+    white-space: nowrap;
+    text-align: right;
+}

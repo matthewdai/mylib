@@ -24,6 +24,9 @@ import { ProjectEditComponent } from './project-list/project-edit/project-edit.c
 import { NavDemoComponent } from './nav-demo/nav-demo.component';
 import { SelectStyleComponent } from './select-style/select-style.component';
 import { ListDemoComponent } from './list-demo/list-demo.component';
+import { TableDemoComponent } from './table-demo/table-demo.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
   imports: [
@@ -40,7 +43,12 @@ import { ListDemoComponent } from './list-demo/list-demo.component';
       { path: 'projects', component: ProjectListComponent },
       { path: 'project/:projectId', component: ProjectComponent },
       { path: 'navdemo', component: NavDemoComponent },
+      { path: 'tabledemo', component: TableDemoComponent },
       { path: 'selectstyle', component: SelectStyleComponent },
+
+      { path: 'carousel', component: CarouselComponent },
+      { path: 'cards', component: CardsComponent },
+      { path: 'listdemo', component: ListDemoComponent },
     ])
   ],
   declarations: [
@@ -61,6 +69,9 @@ import { ListDemoComponent } from './list-demo/list-demo.component';
     NavDemoComponent,
     SelectStyleComponent,
     ListDemoComponent,
+    TableDemoComponent,
+    CarouselComponent,
+    CardsComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]

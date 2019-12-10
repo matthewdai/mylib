@@ -1,3 +1,24 @@
-<p>
-  list-demo works!
-</p>
+<h1>List Demo</h1>
+
+<div class="container">
+    <h3>Horizonal Definition List</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+              <dl class="row">
+                <ng-container *ngFor="let item of items | async">
+                    <dt class="col-sm-6">{{item.type}}</dt>
+                    <dd class="col-sm-6">{{item.price}}</dd>
+                </ng-container>
+              </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+
+<ng-container *ngFor="let item of items">
+    <div>{{item.type}}</div>
+</ng-container>
+ -->
