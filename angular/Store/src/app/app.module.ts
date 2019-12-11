@@ -26,6 +26,7 @@ import { SelectStyleComponent } from './select-style/select-style.component';
 import { TableDemoComponent } from './table-demo/table-demo.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
+import { QuickShopComponent } from './quick-shop/quick-shop.component';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { CardsComponent } from './cards/cards.component';
       { path: 'selectstyle', component: SelectStyleComponent },
       { path: 'carousel', component: CarouselComponent },
       { path: 'cards', component: CardsComponent },
+      { path: 'quickshop', component: QuickShopComponent },
     ])
   ],
   declarations: [
@@ -68,6 +70,7 @@ import { CardsComponent } from './cards/cards.component';
     TableDemoComponent,
     CarouselComponent,
     CardsComponent,
+    QuickShopComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
