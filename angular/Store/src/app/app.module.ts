@@ -29,6 +29,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
 import { QuickShopComponent } from './quick-shop/quick-shop.component';
 import { ModalDemoComponent } from './modal-demo/modal-demo.component';
+import { FlexboxDemoComponent } from './flexbox-demo/flexbox-demo.component';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import { ModalDemoComponent } from './modal-demo/modal-demo.component';
       { path: 'quickshop', component: QuickShopComponent },
       { path: 'listdemo', component: ListDemoComponent },
       { path: 'modaldemo', component: ModalDemoComponent },
+      { path: 'flexdemo', component: FlexboxDemoComponent },
     ])
   ],
   declarations: [
@@ -78,6 +80,7 @@ import { ModalDemoComponent } from './modal-demo/modal-demo.component';
     CardsComponent,
     QuickShopComponent,
     ModalDemoComponent,
+    FlexboxDemoComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
