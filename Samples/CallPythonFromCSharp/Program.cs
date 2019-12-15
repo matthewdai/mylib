@@ -2,6 +2,7 @@
 using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace CallPythonFromCSharp
 {
@@ -27,7 +28,10 @@ namespace CallPythonFromCSharp
 
             scope.SetVariable("params", d); // This will be the name of the dictionary in python script, initialized with previously created .NET Dictionary
             //ScriptSource source = engine.CreateScriptSourceFromFile("PATH_TO_PYTHON_SCRIPT_FILE"); // Load the script
-            ScriptSource source = engine.CreateScriptSourceFromFile(@"C:\MD\github\mylib\Samples\CallPythonFromCSharp\Scripts\Simple.py"); // Load the script
+            //ScriptSource source = engine.CreateScriptSourceFromFile(@"C:\MD\github\mylib\Samples\CallPythonFromCSharp\Scripts\Simple.py"); // Load the script
+
+            var script = File.ReadAllText("../../../Scripts/Simple.py");
+            ScriptSource source = engine.CreateScriptSourceFromString(script); // Load the script
             object result = source.Execute(scope);
 
             //parameter = scope.GetVariable<string>("parameter"); // To get the finally set variable 'parameter' from the python script

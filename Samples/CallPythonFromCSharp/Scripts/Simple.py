@@ -1,3 +1,5 @@
+import pandas as pd
+
 d = dict(globals())
 
 c = d["params"]

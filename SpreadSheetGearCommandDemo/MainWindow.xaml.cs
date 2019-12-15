@@ -468,7 +468,7 @@ namespace SpreadSheetGearCommandDemo
 
             //Add the checkbox using the calculated bounds.
             var shape = sheet.Shapes.AddFormControl(FormControlType.CheckBox, left, top, width, height);
-            shape.TextFrame.
+            //shape.TextFrame.
 
 
             // get linked cell which will be linked to a visiable cell and a check box
