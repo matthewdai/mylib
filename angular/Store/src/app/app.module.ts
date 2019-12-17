@@ -30,6 +30,7 @@ import { CardsComponent } from './cards/cards.component';
 import { QuickShopComponent } from './quick-shop/quick-shop.component';
 import { ModalDemoComponent } from './modal-demo/modal-demo.component';
 import { FlexboxDemoComponent } from './flexbox-demo/flexbox-demo.component';
+import { FormDemoComponent } from './form-demo/form-demo.component';
 
 @NgModule({
   imports: [
@@ -55,6 +56,7 @@ import { FlexboxDemoComponent } from './flexbox-demo/flexbox-demo.component';
       { path: 'listdemo', component: ListDemoComponent },
       { path: 'modaldemo', component: ModalDemoComponent },
       { path: 'flexdemo', component: FlexboxDemoComponent },
+      { path: 'formdemo', component: FormDemoComponent },
     ])
   ],
   declarations: [
@@ -81,6 +83,7 @@ import { FlexboxDemoComponent } from './flexbox-demo/flexbox-demo.component';
     QuickShopComponent,
     ModalDemoComponent,
     FlexboxDemoComponent,
+    FormDemoComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]

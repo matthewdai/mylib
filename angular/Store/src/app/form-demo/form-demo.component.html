@@ -1,0 +1,73 @@
+<p>
+  form-demo works!
+</p>
+
+
+<div class="container">
+    <h5>Static control</h5>
+    <hr>
+    <form>
+        <div class="form-group row">
+            <label for="user-name" class="col-sm-2 col-form-label">User Name</label>
+            <div class="col-sm-10"><p id="user-name" class="form-control-static">Admin</p></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="password" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+              <input type="password" class="form-control" id="password">
+          </div>
+      </div>      
+    </form>
+
+
+    <h5>Disabled states</h5>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="user_name" class="col-form-label">User Name</label>
+            <input type="text" class="form-control" id="user_name" value="Admin" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="col-form-label">Password</label>
+          <input type="password" class="form-control" id="password">
+          <p is="passwordHelpBlock" class="form-text text-muted">The password must be more than 8 characters long.</p>
+      </div>      
+    </form>
+
+    <h5>Validation styles</h5>
+    <hr>
+    <form>
+        <div class="form-group has-success">
+            <label for="username" class="control-label">Success</label>
+            <input type="text" class="form-control" id="username">
+            <div class="form-control-feedback">The username is ok.</div>
+        </div>
+
+        <div class="form-group has-warning">
+          <label for="password" class="col-form-label">Password</label>
+          <input type="password" class="form-control form-control-warning" id="password">
+          <div class="form-control-feedback">The password must be more than 8 characters long.</div>
+      </div>      
+    </form>
+
+
+    <h5>Material Design Bootstrap</h5>
+    <hr>
+    <form>
+        <div class="form-row">
+            <div class="col-md-4 mb-3 md-form">
+                <label for="validationDefault22">First name</label>
+                <input type="text" class="form-control" id="validationDefault22" value="Mark" required>
+            </div>
+        </div>
+
+        <div class="form-group has-warning">
+          <label for="password" class="col-form-label">Password</label>
+          <input type="password" class="form-control form-control-warning" id="password">
+          <div class="form-control-feedback">The password must be more than 8 characters long.</div>
+      </div>      
+    </form>
+
+</div>
