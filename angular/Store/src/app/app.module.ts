@@ -30,6 +30,7 @@ import { TableDemoComponent } from './table-demo/table-demo.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
 import { ModalDemoComponent } from './modal-demo/modal-demo.component';
+import { UploadDemoComponent } from './upload-demo/upload-demo.component';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { ModalDemoComponent } from './modal-demo/modal-demo.component';
       { path: 'cards', component: CardsComponent },
       { path: 'listdemo', component: ListDemoComponent },
       { path: 'modaldemo', component: ModalDemoComponent },
+      { path: 'uploaddemo', component: UploadDemoComponent },
     ])
   ],
   declarations: [
@@ -78,6 +80,7 @@ import { ModalDemoComponent } from './modal-demo/modal-demo.component';
     CarouselComponent,
     CardsComponent,
     ModalDemoComponent,
+    UploadDemoComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]

@@ -1,0 +1,31 @@
+<h1>Upload file demo</h1>
+
+
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <!-- <input class="form-control-range" type="range" name="dd"> -->
+      <input class="form-control-file form-control-file-sm" type="file" name="script" (change)="fileProgress($event)">
+  </div>
+
+  
+  <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+
+<div>
+    Upload progress: {{fileUploadedProgress}}
+</div>
+
+<div>
+    Path: {{uploadedFilePath}}
+</div>
+
+
+<hr>
+
+<div>Status: {{status}}</div>
+
+<div>File Data: {{fileData}}</div>
