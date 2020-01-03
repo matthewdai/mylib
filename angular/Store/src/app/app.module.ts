@@ -17,6 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StartComponent } from './start/start.component';
 import { ProjectComponent } from './project-list/project/project.component';
 
+import { ModalModule } from './_modal/modal.module';
+
 import { CartService } from './cart.service';
 import { ProjectService } from './project.service';
 import { DatasetListComponent } from './project-list/project/dataset-list/dataset-list.component';
@@ -27,6 +29,7 @@ import { ListDemoComponent } from './list-demo/list-demo.component';
 import { TableDemoComponent } from './table-demo/table-demo.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CardsComponent } from './cards/cards.component';
+import { ModalDemoComponent } from './modal-demo/modal-demo.component';
 
 @NgModule({
   imports: [
@@ -34,6 +37,7 @@ import { CardsComponent } from './cards/cards.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    ModalModule,
     RouterModule.forRoot([
       { path: '', component: StartComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
@@ -49,6 +53,7 @@ import { CardsComponent } from './cards/cards.component';
       { path: 'carousel', component: CarouselComponent },
       { path: 'cards', component: CardsComponent },
       { path: 'listdemo', component: ListDemoComponent },
+      { path: 'modaldemo', component: ModalDemoComponent },
     ])
   ],
   declarations: [
@@ -72,6 +77,7 @@ import { CardsComponent } from './cards/cards.component';
     TableDemoComponent,
     CarouselComponent,
     CardsComponent,
+    ModalDemoComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
