@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
+import { SettingsComponent } from './settings/settings.component';
 // import { MatNavBarComponent } from './mat-nav-bar/mat-nav-bar.component';
 
 
@@ -15,6 +16,7 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
 const routes: Routes = [
     { path: "", redirectTo: "home", pathMatch: "full"},
     { path: "home", component: DashboardComponent },
+    { path: "settings", component: SettingsComponent },
 ]
 
 
@@ -23,7 +25,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     DashboardComponent,
-    TopNavComponent
+    TopNavComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
