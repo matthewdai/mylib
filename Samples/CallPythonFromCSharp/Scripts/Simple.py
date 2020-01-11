@@ -1,11 +1,11 @@
-import pandas as pd
 
-d = dict(globals())
+x = 5;
 
-c = d["params"]
+y = 6;
 
-a = c["fp"]
+r = 5 * 6;
 
-result = a * a
+print(r)
+
 
 

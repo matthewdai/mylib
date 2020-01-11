@@ -31,13 +31,18 @@ import { QuickShopComponent } from './quick-shop/quick-shop.component';
 import { ModalDemoComponent } from './modal-demo/modal-demo.component';
 import { FlexboxDemoComponent } from './flexbox-demo/flexbox-demo.component';
 import { FormDemoComponent } from './form-demo/form-demo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
+import { MatNavBarComponent } from './mat-nav-bar/mat-nav-bar.component';
+
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule, BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: StartComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
@@ -84,6 +89,7 @@ import { FormDemoComponent } from './form-demo/form-demo.component';
     ModalDemoComponent,
     FlexboxDemoComponent,
     FormDemoComponent,
+    MatNavBarComponent,
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, ProjectService]
