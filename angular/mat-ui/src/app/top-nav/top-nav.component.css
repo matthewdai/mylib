@@ -1,0 +1,13 @@
+.navbar {
+    justify-content: space-between;
+}
+
+
+/* mat-sidenav-container {
+    height: 100%;
+} */
+
+mat-sidenav {
+    background-color: aquamarine;
+    width: 200px;
+}
